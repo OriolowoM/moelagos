@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "Channelization & Dredging of System 1 (Odo Iya-Alaro to Lagoon)",
+    "category": "Stormwater Drainage",
+    "location": "Ojota / Maryland / Kosofe LGA",
+    "status": "Ongoing",
+    "completion": 85,
+    "target": "De-flooding Kosofe, Maryland, and upstream catchment areas",
+    "image": "/uploads/2024/07/canal-clearing.jpg",
+    "description": "Comprehensive desilting and channelization of the primary System 1 drainage corridor to ensure unimpeded stormwater conveyance into the Lagos Lagoon.",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "System 4 Drainage Channel Expansion (Aguda / Surulere)",
+    "category": "Stormwater Drainage",
+    "location": "Aguda / Surulere LGA",
+    "status": "Ongoing",
+    "completion": 70,
+    "target": "Mitigation of perennial surface flooding in Aguda & Surulere",
+    "image": "/uploads/2024/07/surulere-drain.jpg",
+    "description": "Concrete lining and expansion of System 4 secondary and primary collector drains to protect thousands of residential and commercial properties.",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "System 5 Primary Channel Reconstruction (Lekki / Ikate Corridor)",
+    "category": "Stormwater Drainage",
+    "location": "Lekki Peninsula / Eti-Osa LGA",
+    "status": "Completed",
+    "completion": 100,
+    "target": "Permanent flood prevention along the Lekki-Epe expressway corridor",
+    "image": "/uploads/2025/02/DSC_0126-scaled.jpg",
+    "description": "Full dredging, widening, and concrete embankment reinforcement of System 5 canal discharging into the Osapa / Ikate natural wetlands.",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "title": "Statewide Tree Greening & Urban Canopy Initiative (LASPARK)",
+    "category": "Urban Greening",
+    "location": "Statewide (Ikeja, Ikoyi, Victoria Island, Ikorodu)",
+    "status": "Ongoing",
+    "completion": 65,
+    "target": "Planting 100,000 native economic and canopy trees by 2027",
+    "image": "/uploads/2024/07/tree-planting.jpg",
+    "description": "Joint initiative with LASPARK and private sector partners under the 'My Tree Challenge' to combat urban heat island effect and increase carbon sequestration.",
+    "featured": true
+  },
+  {
+    "id": 5,
+    "title": "Material Recovery Facility (MRF) Agbowa Waste-to-Wealth Plant",
+    "category": "Waste Management",
+    "location": "Agbowa / Ikosi-Ejirin LCDA",
+    "status": "Completed",
+    "completion": 100,
+    "target": "Processing 500 metric tons of recyclable plastic and organic waste daily",
+    "image": "/uploads/2024/07/mrf-agbowa.jpg",
+    "description": "State-of-the-art sorting and processing facility reducing landfill burden at Olusosun and Solous sites, promoting the circular economy.",
+    "featured": true
+  },
+  {
+    "id": 6,
+    "title": "System 6c Canal Desilting (Ketu - Alapere Corridor)",
+    "category": "Stormwater Drainage",
+    "location": "Ketu / Kosofe LGA",
+    "status": "Ongoing",
+    "completion": 90,
+    "target": "Restoration of stormwater velocity towards Ogudu foreshore",
+    "image": "/uploads/2025/02/20250215131644_IMG_62063-scaled-1.jpg",
+    "description": "Removal of aquatic vegetation, illegal encroachments, and silt deposits along the Ketu-Alapere arterial drainage line.",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "title": "Statewide Zero Open Defecation Public Sanitation Infrastructure",
+    "category": "Sanitation & Hygiene",
+    "location": "Statewide Motor Parks & Transit Hubs",
+    "status": "Ongoing",
+    "completion": 75,
+    "target": "Construction of 120 standardized eco-friendly public sanitation blocks",
+    "image": "/uploads/2024/07/sanitation-hub.jpg",
+    "description": "Executive environmental hygiene project enforcing Executive Order E0/BOS/01 and eliminating open defecation across key commercial centers.",
+    "featured": false
+  },
+  {
+    "id": 8,
+    "title": "Continuous Air Quality Monitoring Sensors Network (LASEPA)",
+    "category": "Environmental Protection",
+    "location": "Industrial Zones (Ikeja, Apapa, Odogunyan, Oshodi)",
+    "status": "Completed",
+    "completion": 100,
+    "target": "Real-time PM2.5 and AQI data generation for public health warnings",
+    "image": "/uploads/2024/07/air-quality.jpg",
+    "description": "Deployment of 20 high-precision solar-powered continuous air quality stations across high-traffic and industrial corridors in Lagos State.",
+    "featured": false
+  }
+]

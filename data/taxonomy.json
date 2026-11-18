@@ -1,0 +1,39 @@
+{
+  "categories": {
+    "News": 197,
+    "Press Releases": 310,
+    "Environment": 49,
+    "Event": 11,
+    "Healthcare": 9,
+    "Diseases": 5,
+    "Family": 2,
+    "Doctors": 1,
+    "Fitness": 1,
+    "Think like a doctor": 1,
+    "Reports": 4
+  },
+  "years": {
+    "2013": 4,
+    "2014": 6,
+    "2015": 12,
+    "2016": 28,
+    "2017": 33,
+    "2018": 9,
+    "2019": 32,
+    "2020": 25,
+    "2021": 52,
+    "2022": 42,
+    "2023": 50,
+    "2024": 48,
+    "2025": 89,
+    "2026": 37
+  },
+  "authors": {
+    "moel": 370,
+    "rahman": 16,
+    "moe": 81
+  },
+  "totalPosts": 467,
+  "totalAttachments": 915,
+  "totalPages": 81
+}

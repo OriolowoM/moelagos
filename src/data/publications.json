@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "title": "Environmental Impact Assessment (EIA) Procedural Guidelines & Compliance Manual",
+    "category": "EIA Guidelines",
+    "date": "2026-04-15",
+    "format": "PDF",
+    "size": "4.8 MB",
+    "description": "Comprehensive statutory guidelines for project proponents, developers, and consultants conducting Environmental Impact Assessments in Lagos State.",
+    "downloadUrl": "/uploads/documents/eia-procedural-manual-2026.pdf",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Lagos State Climate Change Adaptation and Resilience Policy Roadmap (2025–2030)",
+    "category": "Climate Policy",
+    "date": "2025-11-20",
+    "format": "PDF",
+    "size": "6.2 MB",
+    "description": "Strategic framework detailing mitigation targets, carbon emissions trajectory, and flood resilience infrastructure for the megacity.",
+    "downloadUrl": "/uploads/documents/lagos-climate-resilience-roadmap-2025-2030.pdf",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Lagos State Environmental Sanitation Law & Enforcement Regulations",
+    "category": "Regulations & Laws",
+    "date": "2024-08-10",
+    "format": "PDF",
+    "size": "3.1 MB",
+    "description": "Official gazette codifying public health regulations, PSP waste management compliance, and statutory penalties for environmental infractions.",
+    "downloadUrl": "/uploads/documents/environmental-sanitation-law.pdf",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "title": "Annual Flood Risk Outlook and Stormwater Drainage Master Plan",
+    "category": "Drainage Reports",
+    "date": "2026-05-02",
+    "format": "PDF",
+    "size": "7.5 MB",
+    "description": "Hydrological assessment of low-lying catchment zones, canal carrying capacities, and emergency desilting interventions across 20 LGAs.",
+    "downloadUrl": "/uploads/documents/drainage-master-plan-2026.pdf",
+    "featured": true
+  },
+  {
+    "id": 5,
+    "title": "Lagos Environment News Magazine — Vol. 2, Issue 4",
+    "category": "Ministry Periodicals",
+    "date": "2025-12-18",
+    "format": "PDF",
+    "size": "12.4 MB",
+    "description": "Quarterly ministerial bulletin featuring special reports on waste containerization, tree planting awards, and coastal barrier protection.",
+    "downloadUrl": "/uploads/documents/environment-news-vol2-issue4.pdf",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "title": "Executive Order E0/BOS/01 — Mandatory Health Scheme & Public Hygiene Standards",
+    "category": "Executive Orders",
+    "date": "2024-07-16",
+    "format": "PDF",
+    "size": "1.2 MB",
+    "description": "Official executive proclamation by Governor Babajide Olusola Sanwo-Olu mandating health insurance enrollment and zero tolerance for public health hazards.",
+    "downloadUrl": "/uploads/documents/executive-order-e0-bos-01.pdf",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "title": "Single-Use Plastics (SUP) Phase-Out Policy & Biodegradable Alternatives Guide",
+    "category": "Policy Directives",
+    "date": "2024-02-14",
+    "format": "PDF",
+    "size": "2.9 MB",
+    "description": "Operational directives for commercial establishments, food vendors, and manufacturers regarding the state ban on styrofoam and thin plastics.",
+    "downloadUrl": "/uploads/documents/single-use-plastics-phaseout.pdf",
+    "featured": false
+  },
+  {
+    "id": 8,
+    "title": "Urban Greening and Tree Protection By-Laws (LASPARK Guidelines)",
+    "category": "Urban Greening",
+    "date": "2025-06-05",
+    "format": "PDF",
+    "size": "3.7 MB",
+    "description": "Permit procedures for tree felling, compulsory compensatory planting ratios (5:1), and conservation standards in urban development.",
+    "downloadUrl": "/uploads/documents/urban-greening-guidelines.pdf",
+    "featured": false
+  }
+]

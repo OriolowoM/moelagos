@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lagos State Ministry of the Environment and Water Resources</title>
+    <meta name="description" content="Official website of the Lagos State Ministry of the Environment and Water Resources (MOE&WR). Securing a cleaner, greener, healthier and sustainable Lagos." />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://moelagos.gov.ng/wp-content/uploads/2019/12/cropped-LAGOS-ICON.fw_-32x32.png" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              lagos: {
+                green: '#008751',
+                darkGreen: '#005e38',
+                lightGreen: '#e6f4ea',
+                accentGreen: '#228153',
+                orange: '#FF6A00',
+                darkOrange: '#e05d00',
+                lightOrange: '#fff4eb'
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              heading: ['Plus Jakarta Sans', 'Inter', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        color: #1f2937;
+        background-color: #f9fafb;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800 antialiased selection:bg-lagos-green selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
