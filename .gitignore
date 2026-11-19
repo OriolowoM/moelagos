@@ -34,3 +34,11 @@ Thumbs.db
 # Temporary verification screenshots & local scratch
 article_verification_screenshot.png
 header_screenshot.png
+screenshot_*.png
+*.screenshot.*
+audit_*.cjs
+capture_*.cjs
+cdp_*.cjs
+debug_*.cjs
+test_*.cjs
+find_*.cjs

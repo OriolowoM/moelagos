@@ -37,6 +37,14 @@
       }
     </script>
     <style>
+      html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+      }
       body {
         font-family: 'Inter', sans-serif;
         color: #1f2937;
@@ -44,6 +52,10 @@
       }
       h1, h2, h3, h4, h5, h6 {
         font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      /* Prevent text size adjustments on orientation change */
+      html {
+        -webkit-text-size-adjust: 100%;
       }
     </style>
   </head>

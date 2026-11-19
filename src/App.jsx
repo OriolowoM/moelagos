@@ -81,7 +81,7 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 text-gray-800">
+    <div className="min-h-screen flex flex-col bg-gray-50 text-gray-800 w-full max-w-full overflow-x-hidden">
       
       {/* 4.1 Mandatory Public Notice Modal (Only on Public Pages) */}
       {!isAdmin && <PublicNoticeModal />}
