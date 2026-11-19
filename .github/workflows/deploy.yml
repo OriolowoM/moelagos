@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: https://moelagos.ef-oneweb.com
+      url: https://moelagos.gov.ng
 
     steps:
       - name: Download Build Artifact
