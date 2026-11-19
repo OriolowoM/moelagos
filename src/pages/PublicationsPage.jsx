@@ -10,7 +10,7 @@ export default function PublicationsPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const categories = ['All', 'EIA Guidelines', 'Climate Policy', 'Regulations & Laws', 'Drainage Reports', 'Policy Directives', 'Executive Orders'];
+  const categories = ['All', 'EIA Guidelines', 'Climate Policy', 'Regulations & Laws', 'Drainage Reports', 'Policy Directives', 'Executive Orders', 'Ministry Periodicals', 'Urban Greening'];
 
   const filteredPublications = publicationsData.filter(pub => {
     const matchesSearch = pub.title.toLowerCase().includes(searchTerm.toLowerCase()) ||

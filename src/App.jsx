@@ -12,6 +12,7 @@ import PostDetailModal from './components/PostDetailModal';
 // Public Pages
 import HomePage from './pages/HomePage';
 import NewsArticlePage from './pages/NewsArticlePage';
+import GenericPageView from './pages/GenericPageView';
 import AboutPage from './pages/AboutPage';
 import LeadershipPage from './pages/LeadershipPage';
 import DepartmentsPage from './pages/DepartmentsPage';
@@ -24,21 +25,29 @@ import ContactPage from './pages/ContactPage';
 // Administrative CMS Portal
 import AdminPortal from './pages/admin/AdminPortal';
 
-// Migrated posts data with full body content, images, and captions (475 published posts)
+// Migrated posts data with full body content, images, and captions (490 published posts)
 import initialPostsData from './data/posts.json';
+
+const DATA_VERSION = 'v3_full_content_migration_2026_11_19';
 
 // App content wrapper that knows the current route
 function AppContent() {
   const location = useLocation();
   const isAdmin = location.pathname.startsWith('/admin');
 
-  // Posts state allowing live administrative updates
+  // Posts state with automated cache invalidation to prevent stale excerpt caching
   const [posts, setPosts] = useState(() => {
     try {
+      const storedVersion = localStorage.getItem('moelagos_posts_version');
+      if (storedVersion !== DATA_VERSION) {
+        localStorage.removeItem('moelagos_custom_posts');
+        localStorage.setItem('moelagos_posts_version', DATA_VERSION);
+        return initialPostsData;
+      }
       const stored = localStorage.getItem('moelagos_custom_posts');
       if (stored) {
         const parsed = JSON.parse(stored);
-        if (parsed.length > 0 && parsed[0].content) {
+        if (parsed.length > 0 && parsed[0].content && parsed[0].content.length > 200) {
           return parsed;
         }
       }
@@ -56,6 +65,7 @@ function AppContent() {
     setPosts(newPosts);
     try {
       localStorage.setItem('moelagos_custom_posts', JSON.stringify(newPosts));
+      localStorage.setItem('moelagos_posts_version', DATA_VERSION);
     } catch (e) {
       console.warn('Storage quota:', e);
     }
@@ -155,18 +165,16 @@ function AppContent() {
             } 
           />
 
-          {/* Fallback */}
+          {/* Generic WordPress Page / Slug Resolver (e.g. /past-commissioners, /stormwater-drainage-projects, or post slug) */}
+          <Route 
+            path="/:slug" 
+            element={<GenericPageView posts={posts} />} 
+          />
+
+          {/* Fallback to Generic Page View / 404 */}
           <Route 
             path="*" 
-            element={
-              <HomePage 
-                posts={posts} 
-                onSelectPost={(post) => setSelectedPost(post)} 
-                onOpenComplaints={() => setComplaintsOpen(true)}
-                activeCategory={activeCategory}
-                onFilterCategory={handleFilterFromIcon}
-              />
-            } 
+            element={<GenericPageView posts={posts} />} 
           />
         </Routes>
       </main>

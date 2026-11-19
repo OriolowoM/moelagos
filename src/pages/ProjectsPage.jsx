@@ -1,23 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Building2, MapPin, CheckCircle, Clock, 
-  Filter, Layers, ArrowRight, ExternalLink 
+  Filter, Layers, ArrowRight, ExternalLink, Search,
+  ChevronLeft, ChevronRight
 } from 'lucide-react';
 import projectsData from '../data/projects.json';
 
+const CATEGORY_IMAGES = {
+  'Stormwater Drainage': 'https://moelagos.gov.ng/wp-content/uploads/2024/07/canal-clearing.jpg',
+  'Urban Greening': 'https://moelagos.gov.ng/wp-content/uploads/2024/07/tree-planting.jpg',
+  'Waste Management': 'https://moelagos.gov.ng/wp-content/uploads/2024/07/mrf-agbowa.jpg',
+  'Sanitation & Hygiene': 'https://moelagos.gov.ng/wp-content/uploads/2024/07/sanitation-hub.jpg',
+  'Environmental Protection': 'https://moelagos.gov.ng/wp-content/uploads/2024/07/air-quality.jpg'
+};
+
+const DEFAULT_PROJECT_IMG = 'https://moelagos.gov.ng/wp-content/uploads/2025/02/DSC_0126-scaled.jpg';
+
 export default function ProjectsPage() {
+  const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedStatus, setSelectedStatus] = useState('All');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12;
 
   const categories = ['All', 'Stormwater Drainage', 'Urban Greening', 'Waste Management', 'Sanitation & Hygiene', 'Environmental Protection'];
   const statuses = ['All', 'Ongoing', 'Completed'];
 
-  const filteredProjects = projectsData.filter(proj => {
-    const matchesCat = selectedCategory === 'All' || proj.category === selectedCategory;
-    const matchesStatus = selectedStatus === 'All' || proj.status === selectedStatus;
-    return matchesCat && matchesStatus;
-  });
+  const filteredProjects = useMemo(() => {
+    return projectsData.filter(proj => {
+      const term = searchTerm.toLowerCase();
+      const matchesSearch = !term || 
+        proj.title.toLowerCase().includes(term) ||
+        (proj.location && proj.location.toLowerCase().includes(term)) ||
+        (proj.target && proj.target.toLowerCase().includes(term)) ||
+        (proj.description && proj.description.toLowerCase().includes(term));
+      const matchesCat = selectedCategory === 'All' || proj.category === selectedCategory;
+      const matchesStatus = selectedStatus === 'All' || proj.status === selectedStatus;
+      return matchesSearch && matchesCat && matchesStatus;
+    });
+  }, [searchTerm, selectedCategory, selectedStatus]);
+
+  // Reset page when filter changes
+  const handleCategoryChange = (cat) => {
+    setSelectedCategory(cat);
+    setCurrentPage(1);
+  };
+
+  const handleStatusChange = (stat) => {
+    setSelectedStatus(stat);
+    setCurrentPage(1);
+  };
+
+  const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
+  const paginatedProjects = filteredProjects.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   return (
     <div className="bg-gray-50 min-h-screen py-10 sm:py-16 animate-fadeIn">
@@ -34,23 +73,37 @@ export default function ProjectsPage() {
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-xs font-bold uppercase tracking-wider text-lagos-green">THEMES+ Infrastructure Tracker</span>
           <h1 className="font-heading text-3xl sm:text-5xl font-extrabold text-gray-950">
-            Environmental & Drainage Projects
+            Environmental & Drainage Projects ({projectsData.length})
           </h1>
           <p className="text-gray-600 text-base sm:text-lg">
-            Tracking primary canal dredging, stormwater defenses, waste recovery facilities, and urban greening projects delivering a cleaner, flood-free Lagos.
+            Tracking 91 primary stormwater drainage channels, urban beautification corridors, and sanitation infrastructure delivering a cleaner, flood-free Lagos.
           </p>
         </div>
 
-        {/* Filter Controls */}
+        {/* Filter & Search Controls */}
         <div className="bg-white rounded-3xl p-6 border border-gray-150 shadow-sm space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="relative">
+            <Search className="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
+            <input
+              type="text"
+              placeholder="Search projects by canal name, community, target or LGA (e.g. Duro Simi Eti, Ikate, Lekki, Kosofe)..."
+              value={searchTerm}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                setCurrentPage(1);
+              }}
+              className="w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-2xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-lagos-green/20 focus:border-lagos-green"
+            />
+          </div>
+
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2 border-t border-gray-100">
             {/* Category Filter Pills */}
             <div className="flex items-center gap-1.5 overflow-x-auto pb-2 sm:pb-0 text-xs">
               <span className="text-gray-400 font-bold uppercase tracking-wider mr-2 hidden lg:inline">Sector:</span>
               {categories.map((cat, idx) => (
                 <button
                   key={idx}
-                  onClick={() => setSelectedCategory(cat)}
+                  onClick={() => handleCategoryChange(cat)}
                   className={`px-3.5 py-2 rounded-xl font-bold whitespace-nowrap transition ${
                     selectedCategory === cat
                       ? 'bg-lagos-green text-white shadow-sm'
@@ -69,7 +122,7 @@ export default function ProjectsPage() {
                 {statuses.map((stat, idx) => (
                   <button
                     key={idx}
-                    onClick={() => setSelectedStatus(stat)}
+                    onClick={() => handleStatusChange(stat)}
                     className={`px-3 py-1.5 rounded-lg transition ${
                       selectedStatus === stat
                         ? 'bg-white text-gray-900 shadow-xs'
@@ -84,10 +137,20 @@ export default function ProjectsPage() {
           </div>
         </div>
 
+        {/* Results Info */}
+        <div className="flex items-center justify-between text-xs text-gray-500 px-2">
+          <span>Showing {paginatedProjects.length} of {filteredProjects.length} matching infrastructure projects</span>
+          {totalPages > 1 && (
+            <span>Page {currentPage} of {totalPages}</span>
+          )}
+        </div>
+
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filteredProjects.map((proj) => {
+          {paginatedProjects.map((proj) => {
             const isCompleted = proj.status === 'Completed';
+            const imgSource = proj.image || CATEGORY_IMAGES[proj.category] || DEFAULT_PROJECT_IMG;
+
             return (
               <div 
                 key={proj.id}
@@ -97,12 +160,12 @@ export default function ProjectsPage() {
                   {/* Image & Status Tag */}
                   <div className="relative h-52 bg-gray-100 overflow-hidden">
                     <img 
-                      src={proj.image} 
+                      src={imgSource} 
                       alt={proj.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                       onError={(e) => {
                         e.target.onerror = null;
-                        e.target.src = "https://moelagos.gov.ng/wp-content/uploads/2025/02/DSC_0126-scaled.jpg";
+                        e.target.src = DEFAULT_PROJECT_IMG;
                       }}
                     />
                     <div className="absolute top-4 left-4">
@@ -127,7 +190,7 @@ export default function ProjectsPage() {
                   <div className="p-6 space-y-4">
                     <div className="flex items-center gap-1.5 text-xs text-gray-500 font-semibold">
                       <MapPin className="w-4 h-4 text-lagos-green flex-shrink-0" />
-                      <span>{proj.location}</span>
+                      <span className="truncate">{proj.location}</span>
                     </div>
 
                     <h2 className="font-heading font-extrabold text-lg text-gray-950 group-hover:text-lagos-green transition leading-snug">
@@ -135,7 +198,7 @@ export default function ProjectsPage() {
                     </h2>
 
                     <p className="text-xs text-gray-600 leading-relaxed line-clamp-3">
-                      {proj.description}
+                      {proj.description || proj.target}
                     </p>
 
                     {/* Completion Bar */}
@@ -159,14 +222,57 @@ export default function ProjectsPage() {
                 </div>
 
                 {/* Target Footer */}
-                <div className="bg-gray-50 px-6 py-3.5 border-t border-gray-100 text-xs text-gray-600">
-                  <span className="font-bold text-gray-800">Target Objective: </span>
-                  <span>{proj.target}</span>
-                </div>
+                {proj.target && (
+                  <div className="bg-gray-50 px-6 py-3.5 border-t border-gray-100 text-xs text-gray-600">
+                    <span className="font-bold text-gray-800">Target Objective: </span>
+                    <span className="line-clamp-2">{proj.target}</span>
+                  </div>
+                )}
               </div>
             );
           })}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex items-center justify-center gap-2 pt-6">
+            <button
+              onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+              disabled={currentPage === 1}
+              className="p-2.5 rounded-xl border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <div className="flex items-center gap-1">
+              {Array.from({ length: totalPages }, (_, i) => i + 1)
+                .filter(p => p === 1 || p === totalPages || Math.abs(p - currentPage) <= 2)
+                .map((p, idx, arr) => (
+                  <React.Fragment key={p}>
+                    {idx > 0 && arr[idx - 1] !== p - 1 && (
+                      <span className="px-2 text-gray-400">...</span>
+                    )}
+                    <button
+                      onClick={() => setCurrentPage(p)}
+                      className={`w-9 h-9 rounded-xl font-bold text-xs transition ${
+                        currentPage === p
+                          ? 'bg-lagos-green text-white shadow-sm'
+                          : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      {p}
+                    </button>
+                  </React.Fragment>
+                ))}
+            </div>
+            <button
+              onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+              disabled={currentPage === totalPages}
+              className="p-2.5 rounded-xl border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        )}
 
         {/* Bottom Banner */}
         <div className="bg-white rounded-3xl p-8 border border-gray-150 text-center space-y-4 max-w-3xl mx-auto shadow-sm">

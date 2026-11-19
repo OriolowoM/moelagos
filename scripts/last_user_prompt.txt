@@ -1,0 +1,761 @@
+<USER_REQUEST>
+https://www.youtube.com/channel/UCNVjraoL_yu6ftQsgXDU6qg
+https://www.youtube.com/channel/UC1hSRTPrOXI8lD8fdUbpnmw
+https://www.youtube.com/channel/UC1hSRTPrOXI8lD8fdUbpnmw
+
+Update the Messages from the Ministry on the localhost:3002 to reflect the one on the moelagos.gov.ng as shown in the attached screen shot, also update the youtube links as listed above
+
+Also the prompt below, use it to update the pages. find attached the files with content to be upsed for the update. The page content updates is in the url - C:\projects\moelagos\pages
+
+Pls use this to updates the pages and post content on the website
+
+# MASTER PROMPT: COMPLETE WORDPRESS-TO-REACT CONTENT MIGRATION, REPLICATION & DATA INTEGRITY
+
+## 1. ROLE AND OBJECTIVE
+
+Act as a Senior Full-Stack Software Architect, WordPress Migration Specialist, React Developer, MySQL Database Architect, and Digital Publishing Consultant with extensive experience migrating enterprise-level WordPress websites to modern React-based applications.
+
+The objective is to ensure that the new React/MySQL website faithfully reproduces **ALL original content, media, publishing information, content structure, and relevant website functionality** from the existing WordPress website.
+
+This is not a simple content import, website redesign, or homepage data migration.
+
+It is a comprehensive content migration and preservation exercise.
+
+The new React website must contain the actual, complete content from the original WordPress website, not shortened versions, summaries, excerpts, placeholders, or abstract representations.
+
+**The WordPress website must serve as the content source of truth throughout the migration.**
+
+The migration must preserve content completeness and accuracy while adapting the content to the architecture, functionality, visual design, and performance requirements of the new React/MySQL application.
+
+## 2. PRIMARY MIGRATION REQUIREMENT: PRESERVE 100% OF CONTENT
+
+Every published WordPress post and page must be migrated with its complete original content.
+
+Do not import only:
+- Post titles.
+- Excerpts.
+- Summaries.
+- Featured images.
+- Homepage thumbnail information.
+- First few paragraphs.
+- Simplified article descriptions.
+
+Every article and page must retain its complete body content from beginning to end.
+
+This includes:
+
+- All paragraphs and text sections.
+- All headings and subheadings.
+- Long-form articles and reports.
+- Speeches, addresses, interviews, and official statements.
+- Quotations and highlighted text.
+- Ordered and unordered lists.
+- Tables and structured information.
+- Bold, italic, underline, and other inline formatting.
+- Hyperlinks and references.
+- In-article photographs and illustrations.
+- Image captions and credits.
+- Image galleries and grouped media.
+- Embedded YouTube videos and other supported media.
+- Downloadable files and document links.
+- Audio and video embeds.
+- Blockquotes and pull quotes.
+- Buttons and call-to-action elements.
+- Relevant HTML structures and content layouts.
+- Closing statements, acknowledgements, signatures, and official sign-offs.
+
+Do not truncate, rewrite, paraphrase, summarise, or omit any original published content.
+
+Where content is stored in WordPress shortcodes, Gutenberg blocks, Elementor data, custom fields, or other structured formats, identify the storage format and implement an appropriate conversion or rendering strategy.
+
+## 3. CONDUCT A COMPLETE WORDPRESS CONTENT AUDIT BEFORE MIGRATION
+
+Before making changes, investigate the existing WordPress website and identify all available sources of content.
+
+Examine the following:
+
+### A. WordPress content
+
+- Published posts.
+- Published pages.
+- Drafts and scheduled posts, where migration is required.
+- Custom post types.
+- Custom taxonomies.
+- Categories.
+- Tags.
+- Parent-child page relationships.
+- Post ordering.
+- Author information.
+- Publication dates.
+- Last modified dates.
+- Permalinks and original slugs.
+
+### B. WordPress media library
+
+Inspect the complete media library, including:
+
+- Original images.
+- Featured images.
+- Inline article photographs.
+- Gallery images.
+- Image thumbnails and alternative sizes.
+- Captions.
+- Image descriptions.
+- Alternative text (ALT).
+- Image titles.
+- Media credits and attribution.
+- PDF documents.
+- Word documents.
+- Audio files.
+- Video files.
+- Other downloadable attachments.
+
+### C. WordPress content structures
+
+Identify whether the website uses:
+
+- Gutenberg block editor.
+- Classic WordPress editor.
+- Elementor.
+- Divi.
+- WPBakery.
+- Custom shortcodes.
+- Custom post types.
+- Advanced Custom Fields (ACF).
+- Custom theme components.
+- Third-party publishing plugins.
+
+Do not assume that the WordPress REST API exposes every piece of content. Some page builders, custom fields, and plugins store information in post metadata or other database tables.
+
+Identify the most reliable extraction method for the actual website.
+
+Possible sources include:
+
+- WordPress REST API.
+- WordPress XML (WXR) export.
+- WordPress database export.
+- WP-CLI.
+- Existing website backup.
+- Direct access to WordPress uploads.
+- Page-builder and custom-field data.
+
+Use multiple sources when necessary to achieve completeness.
+
+Do not start implementation based on an incomplete or lightweight dataset.
+
+## 4. MIGRATE FULL ARTICLE AND PAGE CONTENT
+
+Establish a reliable content migration pipeline that extracts complete post and page content.
+
+Every migrated record should contain, where applicable:
+
+- Original WordPress post ID.
+- Title.
+- Slug.
+- Complete body content.
+- Excerpt.
+- Featured image.
+- Author.
+- Publication date.
+- Last modified date.
+- Publication status.
+- Categories.
+- Tags.
+- Custom taxonomies.
+- Parent page ID.
+- Menu order.
+- Post type.
+- Permalink.
+- SEO title.
+- SEO description.
+- Canonical URL.
+- Open Graph metadata.
+- Relevant custom fields.
+- Other available publishing metadata.
+
+**Critical requirement: Do not confuse the excerpt with the complete article body.**
+
+The full `content.rendered`, complete post content, or equivalent source field must be migrated and stored separately from the excerpt.
+
+If the application uses JSON datasets, ensure that the actual article dataset includes the complete content field. Do not use homepage summary datasets as the source for article pages.
+
+If MySQL is the primary storage system, create or update the appropriate database schema to accommodate the complete content and associated metadata.
+
+The React frontend must retrieve the complete article body through the appropriate backend/API layer.
+
+Never silently fall back to an excerpt when the full body is missing.
+
+Instead, identify the missing content, log the affected record, and resolve the source of the problem.
+
+## 5. PRESERVE ALL IMAGES AND MEDIA FILES
+
+This is one of the most important requirements.
+
+Every image used on the original WordPress website must also be available and display correctly on the new React website.
+
+Do not migrate only featured images while ignoring photographs embedded inside articles and pages.
+
+### Image migration requirements
+
+Identify and migrate:
+
+1. Featured images.
+2. In-article images.
+3. Gallery photographs.
+4. Images inside Gutenberg blocks.
+5. Images inside Elementor layouts.
+6. Images inserted through shortcodes.
+7. Images referenced inside custom fields.
+8. Images used in page banners and content sections.
+9. Images inside reusable content components.
+10. Other referenced media assets.
+
+Download all required media files from the original WordPress uploads directory or another authoritative source.
+
+Preserve the original directory structure wherever practical.
+
+For example:
+
+`/wp-content/uploads/2026/10/example-image.jpg`
+
+Could be mapped to:
+
+`/public/uploads/2026/10/example-image.jpg`
+
+The React application must use the correct local asset path or an explicitly configured media storage/CDN path.
+
+Do not depend on the original WordPress website remaining online by hotlinking its media indefinitely.
+
+### Image quality and presentation
+
+Preserve:
+
+- Original image resolution.
+- Aspect ratios.
+- Appropriate image dimensions.
+- Captions.
+- ALT text.
+- Image credits.
+- Image order.
+- Image positioning within the article.
+
+Do not replace original photographs with generic stock images, AI-generated illustrations, or unrelated alternatives.
+
+Do not use a featured image as a substitute for multiple missing in-article photographs.
+
+Where WordPress uses responsive image markup such as `srcset`, `sizes`, or multiple image dimensions, implement an appropriate responsive image strategy without losing the original image.
+
+Images must be properly optimised for delivery without unnecessarily degrading their quality.
+
+### Image verification
+
+After downloading media:
+
+- Verify that each file exists.
+- Verify that the file is readable.
+- Verify the file extension and actual media type.
+- Verify that the image is not corrupted.
+- Confirm that every referenced local media path resolves.
+- Check for broken image links and HTTP 404 responses.
+- Identify missing files and retry failed downloads.
+- Generate a report of successfully migrated and unresolved assets.
+
+Never report a successful media migration simply because image URLs were copied into the database.
+
+The files must actually exist and load successfully.
+
+## 6. WORDPRESS SHORTCODES, GUTENBERG BLOCKS AND PAGE BUILDER CONTENT
+
+WordPress content may contain structured elements that ordinary React HTML rendering does not automatically understand.
+
+Implement a dedicated content conversion and rendering layer.
+
+### A. Shortcodes
+
+Identify and handle WordPress shortcodes, including:
+
+- `[caption]`
+- `[gallery]`
+- `[embed]`
+- Other relevant media and formatting shortcodes.
+- Website-specific custom shortcodes.
+
+For example, this WordPress content:
+
+`[caption id="attachment_7426"]<img src="/uploads/example.jpg" /> Image description here[/caption]`
+
+Must render as an actual image with its corresponding caption, not as raw shortcode text.
+
+Convert supported structures to semantic HTML or reusable React components.
+
+For image captions, use appropriate HTML5 structures such as:
+
+- `<figure>`
+- `<img>`
+- `<figcaption>`
+
+Do not rely on simplistic regular expressions for complex nested or attribute-rich shortcodes.
+
+### B. Gutenberg blocks
+
+Identify and preserve the functionality and presentation of:
+
+- Paragraph blocks.
+- Heading blocks.
+- Image blocks.
+- Gallery blocks.
+- Cover blocks.
+- Columns.
+- Groups.
+- Buttons.
+- Lists.
+- Tables.
+- Quotes.
+- Separators.
+- Video blocks.
+- Audio blocks.
+- Embeds.
+- Other supported blocks.
+
+Where possible, convert these into equivalent React components while preserving their content and intended presentation.
+
+### C. Elementor and other page builders
+
+Where Elementor or another builder is used, inspect both the stored builder data and the rendered output.
+
+Preserve content that may exist in post metadata rather than the standard WordPress post content field.
+
+Avoid losing content from:
+
+- Nested sections.
+- Containers.
+- Image widgets.
+- Text editor widgets.
+- Accordions.
+- Tabs.
+- Buttons.
+- Testimonials.
+- Carousels.
+- Forms.
+- Custom HTML widgets.
+- Reusable templates.
+
+Use a reliable conversion approach that preserves actual content and relevant functionality.
+
+Do not blindly copy WordPress builder-generated markup if it depends on unavailable WordPress plugins, stylesheets, or scripts.
+
+Rebuild the equivalent functionality in React where necessary.
+
+### D. Safe content rendering
+
+Implement secure HTML rendering.
+
+Sanitise imported HTML appropriately to prevent script injection and other security vulnerabilities.
+
+Preserve legitimate formatting, hyperlinks, media and supported content elements while removing unsafe executable content.
+
+Do not solve rendering problems by allowing unrestricted raw HTML or executing imported scripts.
+
+## 7. PRESERVE THE ORIGINAL PUBLISHING AND INFORMATION ARCHITECTURE
+
+The new website should retain the relevant organisational structure of the WordPress website.
+
+Preserve:
+
+- Category hierarchies.
+- Tags.
+- Author profiles.
+- Related posts.
+- Related pages.
+- Parent-child page relationships.
+- Original URL slugs.
+- Publication dates.
+- Content ordering.
+- Archive structures.
+- Search functionality.
+- Pagination.
+- Featured content.
+- News or article sections.
+- Downloadable resources.
+- Relevant internal links.
+
+Ensure that clicking a category, tag, author, archive or related article leads to the correct content.
+
+Where practical, preserve original WordPress URLs through appropriate routing and redirects to avoid breaking existing search engine rankings and external links.
+
+Do not create duplicate content records unnecessarily.
+
+Maintain stable relationships between posts, pages, authors, taxonomies and media assets.
+
+## 8. REPLICATE THE CONTENT PROFESSIONALLY IN THE REACT WEBSITE
+
+The objective is not to reproduce outdated WordPress styling exactly.
+
+The objective is to preserve the original content while presenting it through the new website's approved design system.
+
+Build a professional content rendering experience.
+
+### Article pages
+
+Every article page should support:
+
+- Article headline.
+- Publication date.
+- Author information.
+- Category and tag information.
+- Featured image.
+- Complete article body.
+- Properly formatted headings.
+- Paragraph spacing.
+- Inline photographs.
+- Image captions.
+- Image credits.
+- Galleries.
+- Videos and embeds.
+- Tables.
+- Downloadable attachments.
+- Related articles.
+- Social sharing where applicable.
+
+### General pages
+
+Preserve all original page content, sections, images, links, forms, downloadable files and relevant interactive elements.
+
+Where the original WordPress page contains multiple structured sections, reproduce those sections in their correct sequence.
+
+### Content presentation
+
+Make sure that:
+
+- Images are appropriately sized.
+- Captions appear directly beneath their images.
+- Paragraphs are readable.
+- Headings follow a proper hierarchy.
+- Tables are responsive.
+- Galleries work correctly.
+- Videos display correctly.
+- Internal links point to valid destinations.
+- External links remain functional.
+- Content does not overflow on mobile, tablet or desktop.
+- The complete content remains accessible on all supported devices.
+
+Do not sacrifice content completeness to achieve a cleaner layout.
+
+## 9. MIGRATE RELEVANT WEBSITE-WIDE INFORMATION
+
+In addition to posts and pages, audit other information required to make the new website function as a complete replacement for the WordPress publishing website.
+
+Where relevant, preserve or reconstruct:
+
+### Site identity and configuration
+- Website name.
+- Logo.
+- Favicon.
+- Site description.
+- Brand colours.
+- Typography.
+- Contact details.
+- Social media links.
+- Relevant site-wide settings.
+
+### Navigation
+- Primary menu.
+- Secondary menu.
+- Footer menu.
+- Dropdown structures.
+- Menu ordering.
+- Menu links.
+
+### Publishing functionality
+- Search.
+- Category archives.
+- Tag archives.
+- Author archives.
+- Related content.
+- Pagination.
+- Breadcrumbs.
+- Content filtering.
+
+### SEO and discoverability
+- SEO titles.
+- Meta descriptions.
+- Canonical URLs.
+- Open Graph information.
+- Structured data where applicable.
+- XML sitemap.
+- Robots directives.
+- Image ALT text.
+- URL redirects.
+
+### Other relevant content
+- Contact page information.
+- About page.
+- Privacy policy.
+- Terms and conditions.
+- Public notices.
+- Advertisements.
+- Important documents.
+- Downloadable publications.
+- Website footer information.
+
+Do not assume that everything is contained in WordPress posts and pages. Audit menus, theme options, widgets, plugin settings, custom fields and other relevant sources where access is available.
+
+## 10. DATABASE AND APPLICATION ARCHITECTURE
+
+Review the existing React/MySQL application before implementing the migration.
+
+Avoid introducing duplicate datasets or unnecessary architectural changes.
+
+Establish a clean content architecture that can reliably manage the migrated information.
+
+Requirements:
+
+- Maintain the original WordPress IDs as external reference identifiers.
+- Maintain unique and stable slugs.
+- Preserve relationships between content records.
+- Store complete post and page bodies.
+- Store metadata separately where appropriate.
+- Maintain media attachment relationships.
+- Support multiple images per article.
+- Support categories and tags.
+- Support custom content types where required.
+- Support future content imports and updates.
+
+Where the backend uses APIs, ensure complete content is returned to the React frontend.
+
+If the application uses JSON files rather than MySQL for some content, ensure that the full content dataset is maintained separately from lightweight homepage listing datasets.
+
+Implement sensible caching and cache invalidation.
+
+Clear or refresh stale client-side caches after migration so that old excerpts or incomplete content do not continue appearing.
+
+Make the migration repeatable and idempotent: running it again must not create duplicate posts, duplicate media files or broken relationships.
+
+Do not expose database credentials, WordPress authentication credentials or sensitive configuration values in frontend code.
+
+## 11. CONTENT FIDELITY AND DESIGN INTEGRITY
+
+Apply the following hierarchy of priorities:
+
+1. Complete content preservation.
+2. Accurate image and media preservation.
+3. Correct content structure and formatting.
+4. Accurate metadata and relationships.
+5. Functional navigation and internal links.
+6. Professional and responsive presentation.
+7. Performance optimisation.
+
+The new React website must not sacrifice the original information to achieve a visually attractive interface.
+
+A beautifully designed article page containing only an excerpt is a failed migration.
+
+A visually polished website with broken photographs, missing captions, missing paragraphs or incomplete pages is also a failed migration.
+
+Content accuracy is non-negotiable.
+
+## 12. AUTOMATED MIGRATION VALIDATION AND QUALITY ASSURANCE
+
+Do not consider the migration complete immediately after importing the records.
+
+Build a validation process that compares the original WordPress website with the new React website.
+
+### A. Content completeness checks
+
+Compare:
+
+- Total number of source posts.
+- Total number of migrated posts.
+- Total number of source pages.
+- Total number of migrated pages.
+- Custom post types.
+- Number of missing records.
+- Number of duplicate records.
+- Number of records with empty bodies.
+- Number of records with incomplete content.
+- Number of missing headings and paragraphs.
+- Number of missing embedded elements.
+
+Compare full article content, not just titles and excerpts.
+
+Use appropriate normalisation when comparing rendered HTML, so that harmless formatting differences do not produce misleading results.
+
+Where raw source content is available, retain source hashes or equivalent integrity checks to help establish whether content was lost or altered.
+
+### B. Media verification checks
+
+Compare the source media references with the media available in the React application.
+
+Identify:
+
+- Missing featured images.
+- Missing in-article photographs.
+- Broken gallery images.
+- Missing captions.
+- Missing downloadable attachments.
+- Missing local files.
+- Broken media paths.
+- Failed downloads.
+- Duplicate assets.
+
+### C. Visual verification
+
+Select representative pages and articles from different content types and compare:
+
+- Original WordPress article.
+- New React article.
+- Original WordPress page.
+- New React page.
+
+Check the actual rendered content, image positioning, captions, spacing, formatting and responsiveness.
+
+Do not validate only the homepage.
+
+Include long-form articles, articles with many photographs, articles with galleries, articles with tables, older content, recent content and pages built with different WordPress editors.
+
+### D. Functional verification
+
+Test:
+
+- Article navigation.
+- Page navigation.
+- Category links.
+- Tag links.
+- Search.
+- Pagination.
+- Related articles.
+- Internal hyperlinks.
+- External hyperlinks.
+- Image loading.
+- Gallery interaction.
+- Video embedding.
+- Document downloads.
+- Responsive layouts.
+
+Identify and resolve all significant defects.
+
+## 13. MIGRATION REPORT AND ERROR HANDLING
+
+Create a detailed migration report after implementation.
+
+The report must include:
+
+1. Total WordPress posts discovered.
+2. Total WordPress pages discovered.
+3. Total records successfully migrated.
+4. Total records with incomplete or missing content.
+5. Total media files discovered.
+6. Total media files successfully downloaded.
+7. Total media files successfully verified.
+8. Number of broken or unresolved media references.
+9. Number of unsupported shortcodes or blocks.
+10. Number of builder elements requiring manual reconstruction.
+11. Number of URL or routing issues.
+12. Any missing metadata or relationships.
+13. Remaining migration limitations.
+
+Maintain an error log containing the affected WordPress ID, post title, media path or specific component.
+
+Never silently ignore failed records or assets.
+
+Where the original source content is unavailable, explicitly identify it rather than inventing a replacement.
+
+## 14. EXECUTION APPROACH
+
+Work in clearly defined stages.
+
+**STAGE 1: PROJECT AND SOURCE AUDIT**
+
+Inspect the existing React application, backend, MySQL database, source datasets, WordPress website and available backups.
+
+Understand the existing architecture before changing anything.
+
+**STAGE 2: MIGRATION GAP ANALYSIS**
+
+Identify exactly what is missing from the existing migration.
+
+Determine whether the problems originate from incomplete exports, summary datasets, missing database fields, missing media files, unsupported WordPress structures, rendering issues or caching.
+
+**STAGE 3: MIGRATION DESIGN**
+
+Define the extraction method, data mapping, media handling, database structure and content conversion approach.
+
+**STAGE 4: CONTENT AND MEDIA MIGRATION**
+
+Migrate all required posts, pages, media, relationships and metadata.
+
+Ensure that the complete content is available to the React application.
+
+**STAGE 5: CONTENT RENDERING**
+
+Implement the necessary React components, parsers and content formatting utilities.
+
+Ensure that the actual migrated content is properly presented.
+
+**STAGE 6: QUALITY ASSURANCE**
+
+Run automated checks, compare source and destination content, inspect images, test routes and verify representative pages across different screen sizes.
+
+**STAGE 7: FINAL CLEANUP AND REPORTING**
+
+Resolve discovered defects, clear stale caches, remove obsolete incomplete data sources where safe, and produce the migration report.
+
+Do not destructively overwrite existing project data or source files without a backup.
+
+## 15. STRICT IMPLEMENTATION RULES
+
+The following rules are mandatory:
+
+- Do not use post summaries as the article content source.
+- Do not use excerpts as substitutes for complete post bodies.
+- Do not omit long articles because they contain too much content.
+- Do not migrate only featured images.
+- Do not hotlink images when local asset migration is required.
+- Do not ignore WordPress shortcodes.
+- Do not ignore Gutenberg or page-builder data.
+- Do not discard embedded media.
+- Do not remove image captions or credits.
+- Do not truncate HTML or large database fields.
+- Do not change original article wording.
+- Do not invent content to fill missing sections.
+- Do not break existing desktop or mobile layouts.
+- Do not create duplicate content during repeated migrations.
+- Do not report success without verification.
+- Do not make unnecessary changes to unrelated application functionality.
+
+Preserve the existing React application's functionality and design direction unless a change is required to support accurate content presentation.
+
+## 16. FINAL SUCCESS CRITERIA
+
+The migration will be considered successful only when:
+
+1. Every required WordPress post and page is available in the React application.
+2. Every migrated article contains its complete original body, not merely an excerpt.
+3. All relevant in-article photographs are displayed in their correct positions.
+4. Captions, credits and image descriptions are preserved.
+5. Galleries, videos, embeds and downloadable documents work as expected.
+6. Gutenberg blocks, shortcodes and relevant page-builder content are properly handled.
+7. Categories, tags, authors and publishing information are preserved.
+8. Internal links and original URL structures work appropriately.
+9. No significant content is silently omitted.
+10. Media references do not result in missing files or 404 errors.
+11. The website displays content correctly on mobile, tablet and desktop.
+12. A migration audit confirms the results.
+
+**ULTIMATE OBJECTIVE:**
+
+When a visitor opens any migrated article or page on the new React website, the visitor should find the same original information, text, paragraphs, photographs, captions, document links, embedded media and meaningful content structures that existed on the original WordPress website.
+
+The underlying technology may be different, the user interface may be improved, and the application may be faster and more modern, but the original published information must remain complete and accurate.
+
+Treat this as an enterprise-grade content migration with data integrity, content fidelity and professional publishing standards as the primary objectives.
+
+Begin with the audit, understand the existing project and source data, and then execute the migration systematically. Do not stop at recommendations or a migration plan: implement the necessary changes, test them and document the results.
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-11-19T21:09:49+01:00.
+
+The user has uploaded 2 image(s):
+- C:/Users/HP PROBOOK/.gemini/antigravity/brain/4a811d28-4e70-4358-a776-abc5103356cb/.user_uploaded/media_1795118245210_3621f3c5.jpg
+- C:/Users/HP PROBOOK/.gemini/antigravity/brain/4a811d28-4e70-4358-a776-abc5103356cb/.user_uploaded/media_1795118273521_982432ea.jpg
+You can embed these images in an artifact if you need the USER to review them.
+</ADDITIONAL_METADATA>

@@ -1,50 +1,343 @@
-[
-  {
-    "id": 1,
-    "name": "Mr. Tokunbo Philip Wahab",
-    "role": "Honourable Commissioner",
-    "department": "Ministry of the Environment and Water Resources",
-    "image": "https://moelagos.gov.ng/wp-content/uploads/2025/05/TokunboWahab-320x427.jpg",
-    "fallbackImage": "/uploads/2025/02/DSC_0126-scaled.jpg",
-    "bio": "Mr. Tokunbo Philip Wahab is an accomplished and visionary legal practitioner with over 25 years of extensive practice. An alumnus of the prestigious Harvard Kennedy School of Government and Harvard Business School, he spearheads the transformative THEMES+ environmental sanitation, drainage infrastructure, and climate resilience agenda across Lagos State.",
-    "education": "Harvard Kennedy School, Harvard Business School, University of Benin (LL.B)",
-    "email": "env.wr@lagosstate.gov.ng",
-    "order": 1
-  },
-  {
-    "id": 2,
-    "name": "Engr. Olakunle Olamidosu Rotimi-Akodu",
-    "role": "Special Adviser to the Governor on Environment",
-    "department": "Office of Environmental Services",
-    "image": "https://moelagos.gov.ng/wp-content/uploads/2024/10/Olkunle-Rotimi-SA-Environment.jpg",
-    "fallbackImage": "/uploads/2025/02/DSC_0126-scaled.jpg",
-    "bio": "Engr. Olakunle Rotimi-Akodu is a distinguished engineer and environmental strategist with decades of leadership across civil engineering, environmental sustainability, and public administration. He plays a pivotal role in formulating and executing strategic grassroots sanitation and advocacy programmes.",
-    "education": "Civil & Environmental Engineering Specialist",
-    "email": "sa.environment@lagosstate.gov.ng",
-    "order": 2
-  },
-  {
-    "id": 3,
-    "name": "Dr. Gaji Omobolaji Tajudeen",
-    "role": "Permanent Secretary",
-    "department": "Office of Environmental Services (OES)",
-    "image": "https://moelagos.gov.ng/wp-content/uploads/2022/08/PS-Environmnet-320x414.png",
-    "fallbackImage": "/uploads/2025/02/DSC_0126-scaled.jpg",
-    "bio": "Dr. Gaji Omobolaji Tajudeen is a career civil servant and seasoned administrator with comprehensive expertise in public health, municipal waste regulation, conservation, and environmental policy governance across Lagos State ministries.",
-    "education": "Doctor of Public Health / Environmental Administration",
-    "email": "ps.oes@lagosstate.gov.ng",
-    "order": 3
-  },
-  {
-    "id": 4,
-    "name": "Engr. Mahmood Olakunle Adegbite",
-    "role": "Permanent Secretary",
-    "department": "Office of Drainage Services & Water Resources (ODS&WR)",
-    "image": "https://moelagos.gov.ng/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-18-at-15.50.28_9b2029ff-e1729287637986.jpg",
-    "fallbackImage": "/uploads/2025/02/DSC_0126-scaled.jpg",
-    "bio": "Engineer Mahmood Olakunle Adegbite is an astute civil engineer with vast experience in hydraulic systems, stormwater channel construction, canal dredging, and water resources management. He oversees the state's comprehensive flood mitigation infrastructure.",
-    "education": "Master of Civil Engineering (Hydraulics & Water Resources)",
-    "email": "ps.odswr@lagosstate.gov.ng",
-    "order": 4
-  }
-]
+{
+  "executives": [
+    {
+      "id": 1,
+      "name": "Mr. Tokunbo Philip Wahab",
+      "role": "Honourable Commissioner",
+      "department": "Ministry of the Environment and Water Resources",
+      "image": "https://moelagos.gov.ng/wp-content/uploads/2025/05/TokunboWahab-320x427.jpg",
+      "fallbackImage": "/uploads/2025/02/DSC_0126-scaled.jpg",
+      "bio": "Mr. Tokunbo Philip Wahab is an accomplished and visionary legal practitioner with over 25 years of extensive practice. An alumnus of the prestigious Harvard Kennedy School of Government and Harvard Business School, he spearheads the transformative THEMES+ environmental sanitation, drainage infrastructure, and climate resilience agenda across Lagos State.",
+      "education": "Harvard Kennedy School, Harvard Business School, University of Benin (LL.B)",
+      "email": "env.wr@lagosstate.gov.ng",
+      "order": 1
+    },
+    {
+      "id": 2,
+      "name": "Engr. Olakunle Olamidosu Rotimi-Akodu",
+      "role": "Special Adviser to the Governor on Environment",
+      "department": "Office of Environmental Services",
+      "image": "https://moelagos.gov.ng/wp-content/uploads/2024/10/Olkunle-Rotimi-SA-Environment.jpg",
+      "fallbackImage": "/uploads/2025/02/DSC_0126-scaled.jpg",
+      "bio": "Engr. Olakunle Rotimi-Akodu is a distinguished engineer and environmental strategist with decades of leadership across civil engineering, environmental sustainability, and public administration. He plays a pivotal role in formulating and executing strategic grassroots sanitation and advocacy programmes.",
+      "education": "Civil & Environmental Engineering Specialist",
+      "email": "sa.environment@lagosstate.gov.ng",
+      "order": 2
+    },
+    {
+      "id": 3,
+      "name": "Dr. Gaji Omobolaji Tajudeen",
+      "role": "Permanent Secretary",
+      "department": "Office of Environmental Services (OES)",
+      "image": "https://moelagos.gov.ng/wp-content/uploads/2022/08/PS-Environmnet-320x414.png",
+      "fallbackImage": "/uploads/2025/02/DSC_0126-scaled.jpg",
+      "bio": "Dr. Gaji Omobolaji Tajudeen is a career civil servant and seasoned administrator with comprehensive expertise in public health, municipal waste regulation, conservation, and environmental policy governance across Lagos State ministries.",
+      "education": "Doctor of Public Health / Environmental Administration",
+      "email": "ps.oes@lagosstate.gov.ng",
+      "order": 3
+    },
+    {
+      "id": 4,
+      "name": "Engr. Mahmood Olakunle Adegbite",
+      "role": "Permanent Secretary",
+      "department": "Office of Drainage Services & Water Resources (ODS&WR)",
+      "image": "https://moelagos.gov.ng/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-18-at-15.50.28_9b2029ff-e1729287637986.jpg",
+      "fallbackImage": "/uploads/2025/02/DSC_0126-scaled.jpg",
+      "bio": "Engineer Mahmood Olakunle Adegbite is an astute civil engineer with vast experience in hydraulic systems, stormwater channel construction, canal dredging, and water resources management. He oversees the state's comprehensive flood mitigation infrastructure.",
+      "education": "Master of Civil Engineering (Hydraulics & Water Resources)",
+      "email": "ps.odswr@lagosstate.gov.ng",
+      "order": 4
+    }
+  ],
+  "pastCommissioners": [
+    {
+      "sn": 1,
+      "name": "MR. ALABI MASHA",
+      "period": "1979"
+    },
+    {
+      "sn": 2,
+      "name": "MR. N. A. KEKERE EKUN",
+      "period": "1987"
+    },
+    {
+      "sn": 3,
+      "name": "MR. TEMILOLA KEHINDE",
+      "period": "1990 - 1992"
+    },
+    {
+      "sn": 4,
+      "name": "ENGR. ASHIM ADEBOWALE OYEKAN",
+      "period": "1994 - 1995"
+    },
+    {
+      "sn": 5,
+      "name": "ENGR. GBENGA ASHAFA",
+      "period": "1995"
+    },
+    {
+      "sn": 6,
+      "name": "MRS. FUNMILAYO DA-SILVA",
+      "period": "1997"
+    },
+    {
+      "sn": 7,
+      "name": "ARC. KAYODE ANIBABA",
+      "period": "1999 - 2003"
+    },
+    {
+      "sn": 8,
+      "name": "MR. TUNJI BELLO",
+      "period": "2003 - 2007"
+    },
+    {
+      "sn": 9,
+      "name": "DR. MUIZ ADEYEMI BANIRE",
+      "period": "2007 - 2011"
+    },
+    {
+      "sn": 10,
+      "name": "MR. TUNJI BELLO",
+      "period": "2011- 2015"
+    },
+    {
+      "sn": 11,
+      "name": "DR. SAMUEL BABATUNDE ADEJARE",
+      "period": "2015 - 2018"
+    },
+    {
+      "sn": 12,
+      "name": "MR. BABATUNDE DUROSINMI-ETTI",
+      "period": "2018 - 2019"
+    }
+  ],
+  "pastPermanentSecretaries": [
+    {
+      "sn": 1,
+      "name": "MR. R. K RAHEEM",
+      "period": "1979 - 1983"
+    },
+    {
+      "sn": 2,
+      "name": "MR. V. O. MARCUS",
+      "period": ""
+    },
+    {
+      "sn": 3,
+      "name": "MR. A. O. JAWANDO",
+      "period": ""
+    },
+    {
+      "sn": 4,
+      "name": "DR. SEGUN OYEFULE",
+      "period": ""
+    },
+    {
+      "sn": 5,
+      "name": "MR. G. A. LONGE",
+      "period": "1987 - 1989"
+    },
+    {
+      "sn": 6,
+      "name": "ENGR. KAYODE ANIBABA",
+      "period": "MARCH - SEPT. 1992"
+    },
+    {
+      "sn": 7,
+      "name": "DR. LAJA OMOFADE",
+      "period": "1995"
+    },
+    {
+      "sn": 8,
+      "name": "ENGR. AJIBADE SHEKONI",
+      "period": "JULY - OCT 1999"
+    },
+    {
+      "sn": 9,
+      "name": "ENGR. ADEREMI W. ELEGBEDE",
+      "period": "1999 - 2001"
+    },
+    {
+      "sn": 10,
+      "name": "MRS. A. M. A. MAKANJUOLA",
+      "period": "2005 - 2007"
+    },
+    {
+      "sn": 11,
+      "name": "ENGR. SANTOS PETER OLUBUNMI (Office of Drainage Services)",
+      "period": "2005 - 2007"
+    },
+    {
+      "sn": 12,
+      "name": "DR (MRS) TITILAYO OLUSOLAPE ANIBABA (Office of Environmental Services)",
+      "period": "2008 - 2012"
+    },
+    {
+      "sn": 13,
+      "name": "MRS ADEBOLA AFUN (Office of Environmental Services)",
+      "period": "2012 - 2013"
+    },
+    {
+      "sn": 14,
+      "name": "ENGR. MUYIDEEN ABAYOMI AKINSANYA (Office of Drainage Services)",
+      "period": "2011 - 2015"
+    },
+    {
+      "sn": 15,
+      "name": "MR HAKEEM OGUNBAMBI",
+      "period": "2013- 2015"
+    },
+    {
+      "sn": 16,
+      "name": "ENGR. AYODEJI ADENEKAN (Office of Drainage Services)",
+      "period": "MARCH - AUGSUT 2015"
+    },
+    {
+      "sn": 17,
+      "name": "MR. OLUWATOYIN ONISAROTU",
+      "period": "2015 - 2016"
+    },
+    {
+      "sn": 18,
+      "name": "MRS ELIZABETH ABIODUN ASHIRU",
+      "period": "MAY - JULY 2016"
+    },
+    {
+      "sn": 19,
+      "name": "ENGR. ADEYEMI SALIU",
+      "period": "2016 - 2017"
+    },
+    {
+      "sn": 20,
+      "name": "MR. ABIODUN BAMGBOYE",
+      "period": "2017 - 2019"
+    },
+    {
+      "sn": 20,
+      "name": "MRS. BELINDA ADERONKE ODENEYE",
+      "period": "2019 - JAN 2022"
+    }
+  ],
+  "keyOfficials": [
+    {
+      "sn": 1,
+      "name": "Mr. Tokunbo Philip Wahab",
+      "designation": "Commissioner",
+      "office": "Office of the Commissioner, Ministry of the Environment and Water Resources",
+      "phone": "0810 255 3775",
+      "email": ""
+    },
+    {
+      "sn": 2,
+      "name": "Engr. Olakunle Olamidosu Rotimi-Akodu",
+      "designation": "Special Adviser to the Governor on Drainage Services and Water Resources.",
+      "office": "Office of Drainage Services and Water Resources",
+      "phone": "0810 255 3775",
+      "email": ""
+    },
+    {
+      "sn": 3,
+      "name": "Dr. Gaji Omobolaji Tajudeen",
+      "designation": "Permanent Secretary",
+      "office": "Office of Permanent Secretary, Ministry of the Environment and Water Resources, Alausa.",
+      "phone": "0810 255 3775",
+      "email": ""
+    },
+    {
+      "sn": 4,
+      "name": "Engineer Mahamood. O. Adegbite.",
+      "designation": "Permanent Secretary",
+      "office": "Office of Drainage Services and Water Resources",
+      "phone": "0810 255 3775",
+      "email": ""
+    },
+    {
+      "sn": 5,
+      "name": "Mrs. Adetoun Popoola",
+      "designation": "General Manager",
+      "office": "LASPARK.",
+      "phone": "08137622255",
+      "email": ""
+    },
+    {
+      "sn": 6,
+      "name": "Prince Fatiu Akiolu",
+      "designation": "Managing Director",
+      "office": "LASAA",
+      "phone": "07034084766",
+      "email": ""
+    },
+    {
+      "sn": 7,
+      "name": "Engineer Adefemi Afolabi",
+      "designation": "General Manager",
+      "office": "LSWAMO",
+      "phone": "08023241364‬",
+      "email": ""
+    },
+    {
+      "sn": 8,
+      "name": "Dr Muyiwa Gbedegesin",
+      "designation": "Managing Director / CEO",
+      "office": "LAWMA",
+      "phone": "07067000700",
+      "email": ""
+    },
+    {
+      "sn": 9,
+      "name": "Engr Mukhtar Tijani",
+      "designation": "Managing Director",
+      "office": "Lagos Water Corporation",
+      "phone": "07089090000",
+      "email": ""
+    },
+    {
+      "sn": 10,
+      "name": "CP Gbemisola Akinpelu Rtd",
+      "designation": "Corp Marshal",
+      "office": "Lagos State Environmental Sanitation Corps",
+      "phone": "",
+      "email": ""
+    },
+    {
+      "sn": 11,
+      "name": "Dr Tunde Ajayi",
+      "designation": "General Manager",
+      "office": "LASEPA",
+      "phone": "08038241449",
+      "email": ""
+    },
+    {
+      "sn": 12,
+      "name": "Major Olatubosun Cole(rtd)",
+      "designation": "Corps Marshal",
+      "office": "KAI/LAGESC",
+      "phone": "08033901941",
+      "email": ""
+    },
+    {
+      "sn": 13,
+      "name": "",
+      "designation": "",
+      "office": "",
+      "phone": "",
+      "email": ""
+    },
+    {
+      "sn": 14,
+      "name": "",
+      "designation": "",
+      "office": "",
+      "phone": "",
+      "email": ""
+    },
+    {
+      "sn": 15,
+      "name": "",
+      "designation": "",
+      "office": "",
+      "phone": "0810 255 3775",
+      "email": "env.wr@lagosstate.gov.ng"
+    }
+  ]
+}
