@@ -6,6 +6,7 @@ import {
   Megaphone, ExternalLink, Printer 
 } from 'lucide-react';
 import { formatArticleContent } from '../utils/contentFormatter';
+import { useDocumentSEO } from '../components/SEO';
 
 export default function NewsArticlePage({ posts }) {
   const { slug } = useParams();
@@ -20,6 +21,15 @@ export default function NewsArticlePage({ posts }) {
   // Find post by slug or ID
   const currentIndex = posts.findIndex(p => p.slug === slug || String(p.id) === slug || String(p.wpId) === slug);
   const post = currentIndex !== -1 ? posts[currentIndex] : null;
+
+  // Dynamic Open Graph & Social Sharing SEO
+  useDocumentSEO({
+    title: post ? post.title : 'Article Archive',
+    description: post ? (post.excerpt || post.content?.replace(/<[^>]+>/g, '').slice(0, 180) + '...') : '',
+    image: post ? post.featuredImage : undefined,
+    url: post ? (typeof window !== 'undefined' ? window.location.href : `https://moelagos.gov.ng/news/${post.slug}`) : undefined,
+    type: 'article'
+  });
 
   if (!post) {
     return (

@@ -15,6 +15,11 @@ export default function AdminDashboard({ posts, onNavigate, userRole }) {
   const complaints = JSON.parse(localStorage.getItem('moelagos_complaints') || '[]');
   const pendingComplaints = complaints.filter(c => !c.status || c.status === 'pending').length;
 
+  // Retrieve users from localStorage
+  const savedUsers = JSON.parse(localStorage.getItem('moelagos_admin_users') || '[]');
+  const usersCount = savedUsers.length > 0 ? savedUsers.length : 6;
+  const superAdminCount = savedUsers.length > 0 ? savedUsers.filter(u => u.role === 'Super Administrator').length : 2;
+
   const stats = [
     {
       title: 'Total News Articles',
@@ -57,12 +62,12 @@ export default function AdminDashboard({ posts, onNavigate, userRole }) {
       actionTab: 'media'
     },
     {
-      title: 'Regulatory Publications',
-      value: '8',
-      subtitle: 'EIA Manuals & Gazettes',
-      icon: ShieldCheck,
-      color: 'bg-teal-50 text-teal-600 border-teal-100',
-      actionTab: 'settings'
+      title: 'Staff & User Roles',
+      value: usersCount,
+      subtitle: `${superAdminCount} Super Admins • Roles Control`,
+      icon: Users,
+      color: 'bg-purple-50 text-purple-700 border-purple-100',
+      actionTab: 'users'
     }
   ];
 

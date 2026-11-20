@@ -13,6 +13,7 @@ import AdminPagesManager from './AdminPagesManager';
 import AdminProjectsManager from './AdminProjectsManager';
 import AdminEnquiriesManager from './AdminEnquiriesManager';
 import AdminMediaLibrary from './AdminMediaLibrary';
+import AdminUsersManager from './AdminUsersManager';
 import AdminSettings from './AdminSettings';
 
 export default function AdminPortal({ posts, onUpdatePosts }) {
@@ -39,12 +40,26 @@ export default function AdminPortal({ posts, onUpdatePosts }) {
       setLoginError('Please enter your administrator credentials.');
       return;
     }
+
+    // Check if user exists in saved users
+    let determinedRole = loginRole;
+    try {
+      const savedUsers = JSON.parse(localStorage.getItem('moelagos_admin_users') || '[]');
+      const matched = savedUsers.find(u => 
+        u.email.toLowerCase() === loginEmail.trim().toLowerCase() ||
+        u.username.toLowerCase() === loginEmail.trim().toLowerCase()
+      );
+      if (matched && matched.role) {
+        determinedRole = matched.role;
+      }
+    } catch (err) {}
+
     // Authenticate (supports official government formats)
     setIsAuthenticated(true);
-    setCurrentRole(loginRole);
+    setCurrentRole(determinedRole);
     localStorage.setItem('moelagos_admin_auth', 'true');
-    localStorage.setItem('moelagos_admin_role', loginRole);
-    localStorage.setItem('moelagos_admin_email', loginEmail);
+    localStorage.setItem('moelagos_admin_role', determinedRole);
+    localStorage.setItem('moelagos_admin_email', loginEmail.trim());
   };
 
   const handleLogout = () => {
@@ -59,6 +74,7 @@ export default function AdminPortal({ posts, onUpdatePosts }) {
     { id: 'projects', name: 'Projects & Infrastructure', icon: Layers, badge: '8' },
     { id: 'enquiries', name: 'Citizen Complaints Desk', icon: AlertTriangle, badge: 'Live' },
     { id: 'media', name: 'Media Library', icon: Image, badge: '881' },
+    { id: 'users', name: 'Users & Roles', icon: Users, badge: 'Staff' },
     { id: 'settings', name: 'Portal Settings', icon: Settings }
   ];
 
@@ -347,6 +363,13 @@ export default function AdminPortal({ posts, onUpdatePosts }) {
           {activeTab === 'media' && (
             <AdminMediaLibrary 
               userRole={currentRole}
+            />
+          )}
+
+          {activeTab === 'users' && (
+            <AdminUsersManager 
+              currentUserRole={currentRole}
+              currentEmail={localStorage.getItem('moelagos_admin_email') || loginEmail || 'admin@moelagos.gov.ng'}
             />
           )}
 

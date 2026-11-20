@@ -17,6 +17,10 @@
   # Allow direct access to uploaded files and media
   RewriteRule ^uploads/ - [L]
 
+  # Social Crawler & WhatsApp Link Preview Thumbnail Pre-Renderer
+  RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit|WhatsApp|Twitterbot|Pinterest|Google.*snippet|LinkedInBot|TelegramBot|Slackbot) [NC]
+  RewriteRule ^news/([^/]+)/?$ api/share.php?slug=$1 [L,QSA]
+
   # If file or directory physically exists, serve it directly
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
