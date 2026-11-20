@@ -143,6 +143,25 @@ export default function AdminPortal({ posts, onUpdatePosts }) {
               </select>
             </div>
 
+            {/* Quick-Fill Helper for Localhost / Demo */}
+            <div className="p-3.5 bg-emerald-50/80 border border-emerald-200 rounded-2xl flex items-center justify-between text-xs">
+              <div>
+                <span className="font-bold text-emerald-950 block">Default Admin Login:</span>
+                <span className="text-gray-600 font-mono text-[11px]">admin@moelagos.gov.ng / admin123</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setLoginEmail('admin@moelagos.gov.ng');
+                  setLoginPassword('admin123');
+                  setLoginError('');
+                }}
+                className="px-3 py-1.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg font-bold text-[11px] transition shadow-2xs"
+              >
+                Auto-Fill
+              </button>
+            </div>
+
             <button
               type="submit"
               className="w-full py-3.5 bg-lagos-green hover:bg-[#007043] text-white rounded-xl font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition flex items-center justify-center gap-2"
