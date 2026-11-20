@@ -28,7 +28,7 @@ import AdminPortal from './pages/admin/AdminPortal';
 // Migrated posts data with full body content, images, and captions (490 published posts)
 import initialPostsData from './data/posts.json';
 
-const DATA_VERSION = 'v3_full_content_migration_2026_11_19';
+const DATA_VERSION = 'v4_wp_published_date_reordered_2026_11_20';
 
 // App content wrapper that knows the current route
 function AppContent() {

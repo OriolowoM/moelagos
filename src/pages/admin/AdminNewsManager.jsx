@@ -429,7 +429,14 @@ export default function AdminNewsManager({ posts, onUpdatePosts, userRole }) {
                     </td>
 
                     <td className="py-4 px-4 whitespace-nowrap text-gray-500">
-                      {post.date ? post.date.slice(0, 10) : '2026-10-22'}
+                      <div className="font-semibold text-gray-900 text-xs">
+                        {post.date ? post.date.slice(0, 10) : '2026-10-22'}
+                      </div>
+                      {post.date && post.date.length > 10 && (
+                        <div className="text-[10px] text-gray-400 font-mono">
+                          {post.date.slice(11, 16)}
+                        </div>
+                      )}
                     </td>
 
                     <td className="py-4 px-4 whitespace-nowrap">
