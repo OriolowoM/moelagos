@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 
 // Global Layout Components
 import Header from './components/Header';
@@ -22,6 +22,9 @@ import PublicationsPage from './pages/PublicationsPage';
 import GalleryPage from './pages/GalleryPage';
 import ContactPage from './pages/ContactPage';
 import CommissionerPage from './pages/CommissionerPage';
+import SpecialAdviserPage from './pages/SpecialAdviserPage';
+import PermanentSecretaryOESPage from './pages/PermanentSecretaryOESPage';
+import PermanentSecretaryODSWRPage from './pages/PermanentSecretaryODSWRPage';
 import AIAssistantModal from './components/AIAssistantModal';
 
 // Administrative CMS Portal
@@ -35,7 +38,21 @@ const DATA_VERSION = 'v4_wp_published_date_reordered_2026_11_20';
 // App content wrapper that knows the current route
 function AppContent() {
   const location = useLocation();
+  const navigate = useNavigate();
   const isAdmin = location.pathname.startsWith('/admin');
+
+  // Legacy WordPress query parameter redirect (?page_id=18, ?page_id=20, ?page_id=22)
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const pageId = params.get('page_id');
+    if (pageId === '18') {
+      navigate('/special-adviser', { replace: true });
+    } else if (pageId === '20') {
+      navigate('/permanent-secretary-oes', { replace: true });
+    } else if (pageId === '22') {
+      navigate('/permanent-secretary-odswr', { replace: true });
+    }
+  }, [location.search, navigate]);
 
   // Posts state with automated cache invalidation to prevent stale excerpt caching
   const [posts, setPosts] = useState(() => {
@@ -141,6 +158,29 @@ function AppContent() {
           <Route path="/honourable-commissioner" element={<CommissionerPage posts={posts} />} />
           <Route path="/commissioner" element={<CommissionerPage posts={posts} />} />
           <Route path="/about-moelagos/principal-officers/honourable-commissioner" element={<CommissionerPage posts={posts} />} />
+
+          {/* Special Adviser to the Governor on Environment (Engr. Olakunle Rotimi-Akodu) */}
+          <Route path="/special-adviser" element={<SpecialAdviserPage posts={posts} />} />
+          <Route path="/special-adviser-environment" element={<SpecialAdviserPage posts={posts} />} />
+          <Route path="/engr-olakunle-rotimi-akodu" element={<SpecialAdviserPage posts={posts} />} />
+          <Route path="/special-adviser-to-governor" element={<SpecialAdviserPage posts={posts} />} />
+          <Route path="/page_id=18" element={<SpecialAdviserPage posts={posts} />} />
+          <Route path="/about-moelagos/principal-officers/special-adviser-to-the-governor" element={<SpecialAdviserPage posts={posts} />} />
+          <Route path="/about-moelagos/principal-officers/special-adviser-environment" element={<SpecialAdviserPage posts={posts} />} />
+
+          {/* Permanent Secretary, Office of Environmental Services (Dr. Gaji Omobolaji Tajudeen) */}
+          <Route path="/permanent-secretary-oes" element={<PermanentSecretaryOESPage posts={posts} />} />
+          <Route path="/dr-gaji-tajudeen" element={<PermanentSecretaryOESPage posts={posts} />} />
+          <Route path="/page_id=20" element={<PermanentSecretaryOESPage posts={posts} />} />
+          <Route path="/about-moelagos/principal-officers/permanent-secretary-oes" element={<PermanentSecretaryOESPage posts={posts} />} />
+
+          {/* Permanent Secretary, Office of Drainage Services & Water Resources (Engr. Mahamood Olakunle Adegbite) */}
+          <Route path="/permanent-secretary-odswr" element={<PermanentSecretaryODSWRPage posts={posts} />} />
+          <Route path="/permanent-secretary-ods-wr" element={<PermanentSecretaryODSWRPage posts={posts} />} />
+          <Route path="/engr-mahmood-adegbite" element={<PermanentSecretaryODSWRPage posts={posts} />} />
+          <Route path="/page_id=22" element={<PermanentSecretaryODSWRPage posts={posts} />} />
+          <Route path="/about-moelagos/principal-officers/permanent-secretary-odswr" element={<PermanentSecretaryODSWRPage posts={posts} />} />
+          <Route path="/about-moelagos/principal-officers/permanent-secretary-ods-wr" element={<PermanentSecretaryODSWRPage posts={posts} />} />
 
           {/* Departments & Units */}
           <Route path="/departments" element={<DepartmentsPage />} />

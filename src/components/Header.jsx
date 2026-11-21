@@ -188,42 +188,52 @@ export default function Header({ onOpenComplaints, onSearchClick, onOpenAIAssist
                 <ChevronDown className="w-3.5 h-3.5 text-gray-400 group-hover:text-lagos-green group-hover:rotate-180 transition duration-200" />
               </Link>
               
-              <div className="absolute left-0 top-full pt-2 hidden group-hover:block w-72 z-50 animate-fadeIn">
+              <div className="absolute left-0 top-full pt-2 hidden group-hover:block w-80 z-50 animate-fadeIn">
                 <div className="bg-white rounded-2xl shadow-xl border border-gray-150 p-2 space-y-1">
                   <Link to="/about" className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-green-50 hover:text-lagos-green rounded-xl transition">
                     <Building2 className="w-4 h-4 text-lagos-green flex-shrink-0" />
                     <div>
-                      <div>Ministry Mandate & History</div>
-                      <div className="text-[10px] text-gray-400 font-normal">Founding history (1979) & objectives</div>
+                      <div>Ministry Mandate &amp; History</div>
+                      <div className="text-[10px] text-gray-400 font-normal">Founding history (1979) &amp; objectives</div>
                     </div>
                   </Link>
-                  <Link to="/honourable-commissioner" className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-green-50 hover:text-lagos-green rounded-xl transition">
-                    <Award className="w-4 h-4 text-lagos-green flex-shrink-0" />
+
+                  <div className="px-3 pt-2 pb-1 text-[10px] font-bold uppercase tracking-wider text-lagos-green border-t border-gray-100 flex items-center gap-1">
+                    <Award className="w-3 h-3 text-lagos-orange" />
+                    <span>Executive Leadership &amp; Principal Officers</span>
+                  </div>
+
+                  <Link to="/honourable-commissioner" className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-semibold text-gray-700 hover:bg-green-50 hover:text-lagos-green rounded-xl transition">
+                    <Shield className="w-3.5 h-3.5 text-lagos-green flex-shrink-0" />
                     <div>
                       <div className="font-bold text-gray-900">Honourable Commissioner</div>
-                      <div className="text-[10px] text-gray-500 font-normal">Mr. Tokunbo Philip Wahab Profile &amp; Bio</div>
+                      <div className="text-[10px] text-gray-500 font-normal">Mr. Tokunbo Philip Wahab</div>
                     </div>
                   </Link>
-                  <Link to="/leadership" className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-green-50 hover:text-lagos-green rounded-xl transition">
-                    <Users className="w-4 h-4 text-lagos-green flex-shrink-0" />
+                  <Link to="/special-adviser" className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-semibold text-gray-700 hover:bg-green-50 hover:text-lagos-green rounded-xl transition">
+                    <Shield className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
                     <div>
-                      <div>Leadership &amp; Principal Officers</div>
-                      <div className="text-[10px] text-gray-400 font-normal">Special Advisers &amp; Permanent Secretaries</div>
+                      <div className="font-bold text-gray-900">Special Adviser on Environment</div>
+                      <div className="text-[10px] text-gray-500 font-normal">Engr. Olakunle Rotimi-Akodu</div>
                     </div>
                   </Link>
-                  <Link to="/about" className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-green-50 hover:text-lagos-green rounded-xl transition">
-                    <Trees className="w-4 h-4 text-lagos-green flex-shrink-0" />
+                  <Link to="/permanent-secretary-oes" className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-semibold text-gray-700 hover:bg-green-50 hover:text-lagos-green rounded-xl transition">
+                    <Trees className="w-3.5 h-3.5 text-lagos-green flex-shrink-0" />
                     <div>
-                      <div>Office of Environmental Services</div>
-                      <div className="text-[10px] text-gray-400 font-normal">Solid waste, sanitation & climate</div>
+                      <div className="font-bold text-gray-900">Permanent Secretary (OES)</div>
+                      <div className="text-[10px] text-gray-500 font-normal">Dr. Gaji Omobolaji Tajudeen</div>
                     </div>
                   </Link>
-                  <Link to="/about" className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-green-50 hover:text-lagos-green rounded-xl transition">
-                    <Droplets className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                  <Link to="/permanent-secretary-odswr" className="flex items-center gap-2.5 px-3 py-1.5 text-xs font-semibold text-gray-700 hover:bg-green-50 hover:text-lagos-green rounded-xl transition">
+                    <Droplets className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
                     <div>
-                      <div>Office of Drainage Services</div>
-                      <div className="text-[10px] text-gray-400 font-normal">Canal dredging & stormwater systems</div>
+                      <div className="font-bold text-gray-900">Permanent Secretary (ODS&amp;WR)</div>
+                      <div className="text-[10px] text-gray-500 font-normal">Engr. Mahamood Olakunle Adegbite</div>
                     </div>
+                  </Link>
+                  <Link to="/leadership" className="flex items-center justify-between px-3 py-2 text-xs font-bold text-lagos-green hover:bg-green-50 rounded-xl transition border-t border-gray-100 mt-1">
+                    <span>View All Leadership &amp; Directory</span>
+                    <span>→</span>
                   </Link>
                 </div>
               </div>
@@ -518,16 +528,22 @@ export default function Header({ onOpenComplaints, onSearchClick, onOpenAIAssist
                   {activeMobileSection === 'about' && (
                     <div className="pl-4 pr-3 py-2 space-y-2 text-xs bg-gray-50 rounded-xl mt-1">
                       <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-gray-700 hover:text-lagos-green font-medium">
-                        • Mandate & Institutional History
+                        • Mandate &amp; Institutional History
                       </Link>
                       <Link to="/honourable-commissioner" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-gray-900 font-bold hover:text-lagos-green">
                         • Hon. Commissioner (Mr. Tokunbo Wahab)
                       </Link>
-                      <Link to="/leadership" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-gray-700 hover:text-lagos-green font-medium">
-                        • Principal Officers &amp; Leadership
+                      <Link to="/special-adviser" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-gray-900 font-bold hover:text-lagos-green">
+                        • Special Adviser (Engr. Olakunle Rotimi-Akodu)
                       </Link>
-                      <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-gray-700 hover:text-lagos-green font-medium">
-                        • Dual Ministerial Directorates (OES & ODS)
+                      <Link to="/permanent-secretary-oes" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-gray-900 font-bold hover:text-lagos-green">
+                        • Perm. Secretary OES (Dr. Gaji Tajudeen)
+                      </Link>
+                      <Link to="/permanent-secretary-odswr" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-gray-900 font-bold hover:text-lagos-green">
+                        • Perm. Secretary ODS&amp;WR (Engr. Mahamood Adegbite)
+                      </Link>
+                      <Link to="/leadership" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-gray-700 hover:text-lagos-green font-medium">
+                        • Principal Officers &amp; Past Leaders Directory
                       </Link>
                     </div>
                   )}

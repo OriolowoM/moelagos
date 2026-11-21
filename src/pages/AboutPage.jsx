@@ -22,6 +22,9 @@ export default function AboutPage() {
     {
       title: 'Office of Environmental Services (OES)',
       subtitle: 'Environmental Protection, Waste Regulation & Climate Resilience',
+      leader: 'Dr. Gaji Omobolaji Tajudeen',
+      leaderRole: 'Permanent Secretary',
+      leaderUrl: '/permanent-secretary-oes',
       desc: 'Oversees municipal solid waste governance (LAWMA), pollution and air quality enforcement (LASEPA), urban parks and botanical reserves (LASPARK), environmental health standards, climate change adaptation strategies, and conservation ecology across all 20 LGAs and 37 LCDAs.',
       icon: Trees,
       color: 'bg-emerald-50 text-emerald-800 border-emerald-200',
@@ -37,6 +40,9 @@ export default function AboutPage() {
     {
       title: 'Office of Drainage Services & Water Resources (ODS&WR)',
       subtitle: 'Stormwater Infrastructure, Canal Dredging & Water Resource Governance',
+      leader: 'Engr. Mahamood Olakunle Adegbite, FNSE',
+      leaderRole: 'Permanent Secretary',
+      leaderUrl: '/permanent-secretary-odswr',
       desc: 'Mandated with designing, constructing, and maintaining primary, secondary, and tertiary stormwater drainage corridors across Lagos State. Coordinates continuous mechanical desilting, deflooding emergency operations, wastewater regulation (LSWMO), and potable water distribution (LWC & LAWRECO).',
       icon: Droplets,
       color: 'bg-blue-50 text-blue-900 border-blue-200',
@@ -174,13 +180,31 @@ export default function AboutPage() {
                         ))}
                       </ul>
                     </div>
+                    {/* Leadership Link */}
+                    {off.leader && (
+                      <div className="mt-4 p-3 bg-white rounded-xl border border-gray-200 flex items-center justify-between">
+                        <div>
+                          <div className="text-[10px] uppercase font-bold text-gray-500">{off.leaderRole}</div>
+                          <div className="text-xs font-bold text-gray-900">{off.leader}</div>
+                        </div>
+                        <Link to={off.leaderUrl} className="text-[11px] font-bold text-lagos-green hover:underline flex items-center gap-1">
+                          <span>View Official Profile</span>
+                          <ArrowRight className="w-3 h-3" />
+                        </Link>
+                      </div>
+                    )}
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-gray-150">
+                  <div className="mt-6 pt-4 border-t border-gray-150 flex items-center justify-between">
                     <Link to="/departments" className="inline-flex items-center gap-2 text-xs font-bold text-lagos-green hover:underline">
                       <span>Explore Directorates & Units</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
+                    {off.leaderUrl && (
+                      <Link to={off.leaderUrl} className="text-xs font-bold text-gray-600 hover:text-lagos-green">
+                        Leadership Profile →
+                      </Link>
+                    )}
                   </div>
                 </div>
               );

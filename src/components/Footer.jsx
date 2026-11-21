@@ -32,14 +32,14 @@ export default function Footer({ onOpenComplaints }) {
   ];
 
   const quickLinks = [
-    { name: 'About the Ministry', href: '#overview' },
-    { name: 'Honourable Commissioner', href: '#commissioner' },
-    { name: 'Strategic Initiatives', href: '#initiatives' },
-    { name: 'News & Press Releases', href: '#news' },
-    { name: 'Stormwater Drainage Projects', href: '#projects' },
+    { name: 'About the Ministry', href: '/about' },
+    { name: 'Honourable Commissioner', href: '/honourable-commissioner' },
+    { name: 'Special Adviser (Environment)', href: '/special-adviser' },
+    { name: 'Perm. Secretary (OES)', href: '/permanent-secretary-oes' },
+    { name: 'Perm. Secretary (ODS&WR)', href: '/permanent-secretary-odswr' },
+    { name: 'Leadership & Officials Directory', href: '/leadership' },
     { name: 'Complaints Desk', action: onOpenComplaints },
-    { name: 'EIA Clearance Guidelines', href: '#eia' },
-    { name: 'Staff Webmail Login', href: 'http://moelagos.gov.ng/webmail', external: true }
+    { name: 'Staff Webmail Login', href: 'https://moelagos.gov.ng/webmail', external: true }
   ];
 
   return (

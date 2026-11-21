@@ -122,17 +122,27 @@ export default function LeadershipPage() {
                   <div>
                     {/* Photo & Header */}
                     <div className="relative bg-gradient-to-t from-gray-900/80 via-transparent to-transparent flex items-center justify-center p-6 bg-gray-100">
-                      <div className="w-48 h-60 sm:w-56 sm:h-72 rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-gray-200 flex-shrink-0">
+                      <Link 
+                        to={leader.profileUrl || '/leadership'}
+                        className="group relative w-48 h-60 sm:w-56 sm:h-72 rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-gray-200 flex-shrink-0 focus:outline-none focus:ring-4 focus:ring-lagos-green/30"
+                        aria-label={`View full biography of ${leader.name}`}
+                      >
                         <img 
                           src={leader.image} 
                           alt={leader.name}
-                          className="w-full h-full object-cover object-top"
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300"
                           onError={(e) => {
                             e.target.onerror = null;
                             e.target.src = leader.fallbackImage || '/placeholder-leader.jpg';
                           }}
                         />
-                      </div>
+                        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-bold">
+                          <span className="bg-lagos-green/90 px-3 py-1.5 rounded-full shadow-md flex items-center gap-1">
+                            <span>View Profile</span>
+                            <ArrowRight className="w-3 h-3" />
+                          </span>
+                        </div>
+                      </Link>
                     </div>
 
                     {/* Profile Details */}
@@ -142,7 +152,9 @@ export default function LeadershipPage() {
                           {leader.department}
                         </span>
                         <h2 className="font-heading text-xl sm:text-2xl font-extrabold text-gray-950 mt-2">
-                          {leader.name}
+                          <Link to={leader.profileUrl || '/leadership'} className="hover:text-lagos-green transition">
+                            {leader.name}
+                          </Link>
                         </h2>
                         <div className="text-sm font-semibold text-lagos-orange mt-0.5">
                           {leader.role}
@@ -160,17 +172,15 @@ export default function LeadershipPage() {
                         </div>
                       )}
 
-                      {leader.name.toLowerCase().includes('wahab') && (
-                        <div className="pt-3">
-                          <Link 
-                            to="/honourable-commissioner"
-                            className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-lagos-green hover:bg-[#007043] px-4 py-2 rounded-xl transition shadow-xs"
-                          >
-                            <span>View Full Profile &amp; Detailed Biography</span>
-                            <ArrowRight className="w-3.5 h-3.5" />
-                          </Link>
-                        </div>
-                      )}
+                      <div className="pt-3">
+                        <Link 
+                          to={leader.profileUrl || (leader.name.toLowerCase().includes('wahab') ? '/honourable-commissioner' : leader.name.toLowerCase().includes('rotimi') ? '/special-adviser' : leader.name.toLowerCase().includes('gaji') ? '/permanent-secretary-oes' : '/permanent-secretary-odswr')}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-lagos-green hover:bg-[#007043] px-4 py-2.5 rounded-xl transition shadow-xs group"
+                        >
+                          <span>View Official Profile &amp; Detailed Biography</span>
+                          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition" />
+                        </Link>
+                      </div>
                     </div>
                   </div>
 
