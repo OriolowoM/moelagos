@@ -11,7 +11,7 @@ $slug = isset($_GET['slug']) ? trim($_GET['slug'], '/') : '';
 $base_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'];
 $site_title = "Lagos State Ministry of the Environment and Water Resources";
 $default_desc = "Official portal of the Lagos State Ministry of the Environment and Water Resources. Securing a cleaner, greener, healthier, and flood-resilient megacity.";
-$default_image = $base_url . "/uploads/2025/02/DSC_0126-scaled.jpg";
+$default_image = $base_url . "/moelagos-social-card.jpg";
 
 $post_title = $site_title;
 $post_desc = $default_desc;
@@ -19,9 +19,17 @@ $post_image = $default_image;
 $target_url = $base_url . "/" . ($slug ? "news/" . $slug : "");
 
 // Load posts database or JSON file
-$json_path = dirname(__DIR__) . '/src/data/posts.json';
-if (!file_exists($json_path)) {
-    $json_path = dirname(__DIR__) . '/data/posts.json';
+$candidate_paths = [
+    __DIR__ . '/data/posts.json',
+    dirname(__DIR__) . '/data/posts.json',
+    dirname(__DIR__) . '/src/data/posts.json'
+];
+$json_path = null;
+foreach ($candidate_paths as $p) {
+    if (file_exists($p)) {
+        $json_path = $p;
+        break;
+    }
 }
 
 if ($slug && file_exists($json_path)) {
