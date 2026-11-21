@@ -197,11 +197,18 @@ export default function Header({ onOpenComplaints, onSearchClick }) {
                       <div className="text-[10px] text-gray-400 font-normal">Founding history (1979) & objectives</div>
                     </div>
                   </Link>
-                  <Link to="/leadership" className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-green-50 hover:text-lagos-green rounded-xl transition">
+                  <Link to="/honourable-commissioner" className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-green-50 hover:text-lagos-green rounded-xl transition">
                     <Award className="w-4 h-4 text-lagos-green flex-shrink-0" />
                     <div>
-                      <div>Leadership & Principal Officers</div>
-                      <div className="text-[10px] text-gray-400 font-normal">Hon. Commissioner Mr. Tokunbo Wahab</div>
+                      <div className="font-bold text-gray-900">Honourable Commissioner</div>
+                      <div className="text-[10px] text-gray-500 font-normal">Mr. Tokunbo Philip Wahab Profile &amp; Bio</div>
+                    </div>
+                  </Link>
+                  <Link to="/leadership" className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-green-50 hover:text-lagos-green rounded-xl transition">
+                    <Users className="w-4 h-4 text-lagos-green flex-shrink-0" />
+                    <div>
+                      <div>Leadership &amp; Principal Officers</div>
+                      <div className="text-[10px] text-gray-400 font-normal">Special Advisers &amp; Permanent Secretaries</div>
                     </div>
                   </Link>
                   <Link to="/about" className="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-green-50 hover:text-lagos-green rounded-xl transition">
@@ -501,8 +508,11 @@ export default function Header({ onOpenComplaints, onSearchClick }) {
                       <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-gray-700 hover:text-lagos-green font-medium">
                         • Mandate & Institutional History
                       </Link>
+                      <Link to="/honourable-commissioner" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-gray-900 font-bold hover:text-lagos-green">
+                        • Hon. Commissioner (Mr. Tokunbo Wahab)
+                      </Link>
                       <Link to="/leadership" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-gray-700 hover:text-lagos-green font-medium">
-                        • Honourable Commissioner & Officers
+                        • Principal Officers &amp; Leadership
                       </Link>
                       <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block py-1 text-gray-700 hover:text-lagos-green font-medium">
                         • Dual Ministerial Directorates (OES & ODS)

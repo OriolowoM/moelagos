@@ -21,6 +21,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import PublicationsPage from './pages/PublicationsPage';
 import GalleryPage from './pages/GalleryPage';
 import ContactPage from './pages/ContactPage';
+import CommissionerPage from './pages/CommissionerPage';
 
 // Administrative CMS Portal
 import AdminPortal from './pages/admin/AdminPortal';
@@ -132,6 +133,11 @@ function AppContent() {
 
           {/* Leadership & Management */}
           <Route path="/leadership" element={<LeadershipPage />} />
+
+          {/* Honourable Commissioner (Mr. Tokunbo Wahab) Dedicated Page */}
+          <Route path="/honourable-commissioner" element={<CommissionerPage posts={posts} />} />
+          <Route path="/commissioner" element={<CommissionerPage posts={posts} />} />
+          <Route path="/about-moelagos/principal-officers/honourable-commissioner" element={<CommissionerPage posts={posts} />} />
 
           {/* Departments & Units */}
           <Route path="/departments" element={<DepartmentsPage />} />

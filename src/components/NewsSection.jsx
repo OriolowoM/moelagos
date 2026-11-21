@@ -176,12 +176,14 @@ export default function NewsSection({ posts, onSelectPost, initialCategory = 'Al
                     {/* Featured Image Container */}
                     <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-gray-100">
                       <img
-                        src={post.featuredImage || "https://moelagos.gov.ng/wp-content/uploads/2026/09/1000315059.jpg"}
+                        src={post.featuredImage || "/uploads/2026/09/1000315059.jpg"}
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                        loading="lazy"
                         onError={(e) => {
                           e.target.onerror = null;
-                          e.target.src = "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80";
+                          // Fallback to official ministry press release graphic if image fails
+                          e.target.src = "/uploads/2026/09/1000315059.jpg";
                         }}
                       />
                       

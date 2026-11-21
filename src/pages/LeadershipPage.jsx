@@ -159,6 +159,18 @@ export default function LeadershipPage() {
                           <span>{leader.education}</span>
                         </div>
                       )}
+
+                      {leader.name.toLowerCase().includes('wahab') && (
+                        <div className="pt-3">
+                          <Link 
+                            to="/honourable-commissioner"
+                            className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-lagos-green hover:bg-[#007043] px-4 py-2 rounded-xl transition shadow-xs"
+                          >
+                            <span>View Full Profile &amp; Detailed Biography</span>
+                            <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+                        </div>
+                      )}
                     </div>
                   </div>
 

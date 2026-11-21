@@ -14,9 +14,6 @@
   # Allow direct access to API folder and php files
   RewriteRule ^api/ - [L]
 
-  # Allow direct access to uploaded files and media
-  RewriteRule ^uploads/ - [L]
-
   # Social Crawler & WhatsApp Link Preview Thumbnail Pre-Renderer
   RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit|WhatsApp|Twitterbot|Pinterest|Google.*snippet|LinkedInBot|TelegramBot|Slackbot) [NC]
   RewriteRule ^news/([^/]+)/?$ api/share.php?slug=$1 [L,QSA]
@@ -26,11 +23,15 @@
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Otherwise redirect all requests to React index.html
+  # Prevent rewriting missing images or media files to index.html
+  RewriteCond %{REQUEST_URI} \.(jpe?g|png|gif|webp|svg|ico|pdf|mp3|mp4)$ [NC]
+  RewriteRule ^ - [R=404,L]
+
+  # Otherwise redirect all requests to React Single Page Application
   RewriteRule ^ index.html [L]
 </IfModule>
 
-# Caching & Compression for Core Web Vitals (LCP < 2.5s)
+# Caching & Compression for Core Web Vitals
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
 </IfModule>
