@@ -14,6 +14,9 @@
   # Allow direct access to API folder and php files
   RewriteRule ^api/ - [L]
 
+  # Seamlessly rewrite legacy WordPress /wp-content/uploads/ requests to /uploads/
+  RewriteRule ^wp-content/uploads/(.*)$ uploads/$1 [L,NC]
+
   # Social Crawler & WhatsApp Link Preview Thumbnail Pre-Renderer
   RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit|WhatsApp|Twitterbot|Pinterest|Google.*snippet|LinkedInBot|TelegramBot|Slackbot) [NC]
   RewriteRule ^news/([^/]+)/?$ api/share.php?slug=$1 [L,QSA]
