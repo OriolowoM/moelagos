@@ -4,11 +4,11 @@ import {
   Phone, Mail, Search, Menu, X, ChevronDown, 
   ExternalLink, AlertTriangle, Shield, Droplets, 
   Trees, Building2, FileText, CheckCircle, Clock,
-  MapPin, Sparkles, Newspaper, Users, Award,
+  MapPin, Sparkles, Newspaper, Users, Award, Bot,
   Landmark, Scale, Globe, ArrowRight, Camera, BookOpen
 } from 'lucide-react';
 
-export default function Header({ onOpenComplaints, onSearchClick }) {
+export default function Header({ onOpenComplaints, onSearchClick, onOpenAIAssistant }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMobileSection, setActiveMobileSection] = useState(null);
   const [scrolled, setScrolled] = useState(false);
@@ -382,6 +382,18 @@ export default function Header({ onOpenComplaints, onSearchClick }) {
 
           {/* Action Cluster (Search, Complaints CTA, Mobile Toggle) */}
           <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+            {/* AI Assistant Quick Trigger */}
+            <button
+              onClick={onOpenAIAssistant}
+              aria-label="Ask Smart AI Information Officer"
+              className="inline-flex items-center gap-1.5 px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-lagos-darkGreen border border-emerald-200/80 text-xs font-bold transition shadow-2xs hover:shadow-xs flex-shrink-0"
+              title="Ask AI Ministry Assistant"
+            >
+              <Bot className="w-4 h-4 text-lagos-green" />
+              <span className="hidden md:inline">AI Guide</span>
+              <Sparkles className="w-2.5 h-2.5 text-lagos-orange animate-pulse" />
+            </button>
+
             {/* Search Trigger Button */}
             <button 
               onClick={onSearchClick}
@@ -614,6 +626,17 @@ export default function Header({ onOpenComplaints, onSearchClick }) {
                 >
                   Contact Headquarters
                 </Link>
+
+                <button 
+                  onClick={() => { setMobileMenuOpen(false); onOpenAIAssistant && onOpenAIAssistant(); }}
+                  className="w-full text-left px-3.5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-lagos-green text-white font-bold transition flex items-center justify-between shadow-sm"
+                >
+                  <span className="flex items-center gap-2">
+                    <Bot className="w-4 h-4 text-white" />
+                    <span>Ask Smart AI Guide</span>
+                  </span>
+                  <Sparkles className="w-3.5 h-3.5 text-yellow-300" />
+                </button>
 
                 <Link 
                   to="/admin" 

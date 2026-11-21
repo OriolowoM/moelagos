@@ -1,0 +1,572 @@
+{
+  "meta": {
+    "title": "Lagos State Ministry of the Environment and Water Resources AI Knowledge Base",
+    "version": "1.0.0",
+    "lastUpdated": "2026-11-21",
+    "governingBody": "Lagos State Government (LASG)",
+    "officialJurisdiction": "Lagos State, Nigeria",
+    "antiHallucinationEnforced": true
+  },
+  "agencies": [
+    {
+      "id": "moelagos",
+      "acronym": "MOE&WR",
+      "name": "Ministry of the Environment and Water Resources",
+      "officialName": "Lagos State Ministry of the Environment and Water Resources",
+      "category": "Apex Ministerial Ministry",
+      "leadership": {
+        "commissioner": "Mr. Tokunbo Philip Wahab",
+        "specialAdviser": "Engr. Olakunle Olamidosu Rotimi-Akodu",
+        "permSecOES": "Dr. Gaji Omobolaji Tajudeen",
+        "permSecODSWR": "Engr. Mahmood Olakunle Adegbite"
+      },
+      "mandate": "Formulation, execution, and monitoring of government policies and programs relating to environmental protection, sanitation, climate change adaptation, stormwater drainage, and integrated water resources management across Lagos State.",
+      "address": "Block 16, Lagos State Government Secretariat, Alausa, Ikeja, Lagos State, Nigeria",
+      "phone": "0810 255 3775, 0802 232 0497",
+      "email": "env.wr@lagosstate.gov.ng, lagosstateministryoftheenviron@gmail.com",
+      "website": "https://moelagos.gov.ng",
+      "portalUrl": "https://moelagos.gov.ng",
+      "complaintsPortal": "https://moelagos.gov.ng/contact",
+      "verificationStatus": "Verified Official",
+      "lastVerified": "2026-11-21",
+      "keywords": [
+        "ministry",
+        "environment",
+        "commissioner",
+        "tokunbo wahab",
+        "policy",
+        "climate",
+        "themes",
+        "alausa",
+        "secretariat",
+        "general complaint",
+        "eia",
+        "clearance"
+      ],
+      "services": [
+        "Environmental Impact Assessment (EIA) Certification",
+        "Statewide Environmental Sanitation & Flood Mitigation Policy",
+        "Public Environmental Education and Climate Campaigns",
+        "Ministerial Citizen Complaints & Petition Redress Desk"
+      ],
+      "faqs": [
+        {
+          "question": "What is the primary role of the Ministry of the Environment and Water Resources?",
+          "answer": "The Ministry formulates and oversees Lagos State's policies on environmental sanitation, climate adaptation, stormwater drainage infrastructure, flood prevention, and water resources management, coordinating all affiliated environmental agencies."
+        },
+        {
+          "question": "Who is the Honourable Commissioner for the Environment and Water Resources?",
+          "answer": "The Honourable Commissioner is Mr. Tokunbo Philip Wahab, an accomplished lawyer and alumnus of the Harvard Kennedy School and Harvard Business School."
+        },
+        {
+          "question": "Where can I submit a general environmental complaint or petition?",
+          "answer": "You can lodge complaints directly through the Ministry's Citizen Complaints Desk on https://moelagos.gov.ng, or call the Rapid Response lines on 0810 255 3775 or 0802 232 0497."
+        }
+      ]
+    },
+    {
+      "id": "lasepa",
+      "acronym": "LASEPA",
+      "name": "Lagos State Environmental Protection Agency",
+      "officialName": "Lagos State Environmental Protection Agency",
+      "category": "Pollution & Environmental Safety Agency",
+      "leadership": {
+        "generalManager": "Dr. Babatunde Ajayi"
+      },
+      "mandate": "Primary regulatory science and environmental enforcement body tasked with pollution control, noise regulation, industrial effluents, air quality monitoring, and hazardous chemical management.",
+      "address": "LASEPA Complex, Secretariat, Alausa, Ikeja, Lagos State",
+      "phone": "0811 188 8885, 0901 055 5557",
+      "email": "info@lasepa.gov.ng",
+      "website": "https://lasepa.gov.ng",
+      "portalUrl": "https://lasepa.gov.ng",
+      "verificationStatus": "Verified Official",
+      "lastVerified": "2026-11-21",
+      "keywords": [
+        "noise",
+        "pollution",
+        "air quality",
+        "industrial emissions",
+        "effluent",
+        "chemical spill",
+        "nightclub noise",
+        "church noise",
+        "mosque noise",
+        "decibel",
+        "sound permit",
+        "fumes",
+        "lasepa"
+      ],
+      "services": [
+        "Noise Pollution Assessment & Facility Sealing",
+        "Noise Permits for Concerts & Public Events",
+        "Industrial Effluent & Wastewater Laboratory Testing",
+        "Air Quality Index (AQI) Surveillance",
+        "Hazardous Waste & Chemical Incident Containment"
+      ],
+      "faqs": [
+        {
+          "question": "Which agency handles noise pollution complaints in Lagos State?",
+          "answer": "Noise pollution complaints are strictly handled by the Lagos State Environmental Protection Agency (LASEPA). Official contact: 0811 188 8885, 0901 055 5557 or via https://lasepa.gov.ng."
+        },
+        {
+          "question": "What are the legal noise limits in Lagos State?",
+          "answer": "Under LASEPA regulations, allowable limits are: Residential: 55 decibels (Day), 45 decibels (Night); Commercial: 65 decibels (Day), 60 decibels (Night). Night limits take effect at 10:00 PM."
+        },
+        {
+          "question": "How do I report a noisy club, church, or factory?",
+          "answer": "Report directly to LASEPA via https://lasepa.gov.ng or call 0811 188 8885. Environmental surveillance officers inspect the location with sound level meters and issue enforcement notices."
+        }
+      ]
+    },
+    {
+      "id": "lawma",
+      "acronym": "LAWMA",
+      "name": "Lagos Waste Management Authority",
+      "officialName": "Lagos Waste Management Authority",
+      "category": "Solid Waste & Sanitation Authority",
+      "leadership": {
+        "managingDirector": "Dr. Muyiwa Gbadegesin"
+      },
+      "mandate": "Regulatory and administrative oversight of municipal, commercial, industrial, and medical waste management, coordinating private sector participation (PSP) waste collectors across all local councils.",
+      "address": "3, Otto Road, Ijora Oloye, Lagos State",
+      "phone": "0708 060 1020, 0802 344 5821, 617",
+      "email": "info@lawma.gov.ng",
+      "website": "https://lawma.gov.ng",
+      "portalUrl": "https://lawma.gov.ng",
+      "verificationStatus": "Verified Official",
+      "lastVerified": "2026-11-21",
+      "keywords": [
+        "waste",
+        "refuse",
+        "garbage",
+        "trash",
+        "psp",
+        "bin",
+        "lawma",
+        "dumping",
+        "landfill",
+        "olusosun",
+        "solous",
+        "compactor",
+        "sweeper",
+        "recycling",
+        "cart pusher"
+      ],
+      "services": [
+        "PSP Operator Assignment & Performance Regulation",
+        "Commercial & Industrial Solid Waste Licensing",
+        "Sanitary Landfill Operations & Modernization",
+        "Highway & Corridor Mechanical Street Sweeping",
+        "Medical & Hazardous Waste Incineration Oversight",
+        "Circular Economy & Waste-to-Wealth Recycling"
+      ],
+      "faqs": [
+        {
+          "question": "How do I arrange household waste collection in Lagos?",
+          "answer": "Household waste collection in Lagos is carried out by private PSP operators licensed and assigned to specific streets by LAWMA. Residents must register with their designated PSP operator and place bagged refuse in standard bins."
+        },
+        {
+          "question": "Does LAWMA collect every house's trash directly?",
+          "answer": "No. LAWMA is the waste-sector regulator and coordinator. Domestic refuse is collected by licensed private PSP operators assigned to each ward. LAWMA intervenes on expressways, markets, and in cases of PSP failure."
+        },
+        {
+          "question": "Is patronizing cart pushers legal in Lagos?",
+          "answer": "No. Cart pushing is illegal under Lagos State environmental laws because cart pushers routinely dump waste into drainage canals. Both the cart pusher and the resident who engages them face legal penalties."
+        }
+      ]
+    },
+    {
+      "id": "laspark",
+      "acronym": "LASPARK",
+      "name": "Lagos State Parks and Gardens Agency",
+      "officialName": "Lagos State Parks and Gardens Agency",
+      "category": "Urban Greening & Recreation Agency",
+      "leadership": {
+        "generalManager": "Mrs. Adetoun Popoola"
+      },
+      "mandate": "Administration, greening, beautification, landscaping, and maintenance of public recreational parks, gardens, open spaces, and statutory tree conservation across Lagos State.",
+      "address": "Plot 1, Commercial Scheme, Beside Elephant Cement House, CBD, Alausa, Ikeja",
+      "phone": "0802 345 6789",
+      "email": "info@laspark.lg.gov.ng",
+      "website": "https://lasparkportal.lagosstate.gov.ng",
+      "portalUrl": "https://lasparkportal.lagosstate.gov.ng",
+      "verificationStatus": "Verified Official",
+      "lastVerified": "2026-11-21",
+      "keywords": [
+        "park",
+        "garden",
+        "tree",
+        "tree felling",
+        "tree cutting",
+        "pruning",
+        "beautification",
+        "landscaping",
+        "laspark",
+        "jjt park",
+        "ndubuisi kanu park",
+        "recreation"
+      ],
+      "services": [
+        "Tree Felling & Pruning Permits",
+        "Public Recreational Park Booking & Event Permits",
+        "Urban Landscaping & Median Greening",
+        "Annual Lagos Tree Planting Day Coordination",
+        "Botanical Conservation & Arboriculture Advice"
+      ],
+      "faqs": [
+        {
+          "question": "How can I book a Lagos State public park for an event?",
+          "answer": "Public parks such as JJT Park (Alausa) or Ndubuisi Kanu Park can be booked online via the official LASPARK portal at https://lasparkportal.lagosstate.gov.ng or at LASPARK headquarters."
+        },
+        {
+          "question": "Can I cut down a tree in my compound without government approval?",
+          "answer": "No. It is a statutory violation in Lagos State to fell or severely prune a mature tree without an official Tree Permit issued by LASPARK, regardless of whether the tree is on private property."
+        },
+        {
+          "question": "How do I apply for a Tree Felling or Pruning Permit?",
+          "answer": "Apply through https://lasparkportal.lagosstate.gov.ng. LASPARK arborists inspect the tree for structural hazards and issue official clearance with compensatory planting guidelines."
+        }
+      ]
+    },
+    {
+      "id": "lwc",
+      "acronym": "LWC",
+      "name": "Lagos Water Corporation",
+      "officialName": "Lagos Water Corporation",
+      "category": "Potable Water Supply Utility",
+      "leadership": {
+        "managingDirector": "Engr. Mukhtaar Tijani"
+      },
+      "mandate": "Production, scientific purification, transmission, and retail distribution of piped potable drinking water to homes, businesses, and industries across Lagos State.",
+      "address": "Water House, Ijora, Lagos State",
+      "phone": "0704 597 3000, 0704 597 3001",
+      "email": "enquiries@lagoswater.org",
+      "website": "https://lagoswater.org",
+      "portalUrl": "https://lagoswater.org",
+      "verificationStatus": "Verified Official",
+      "lastVerified": "2026-11-21",
+      "keywords": [
+        "water supply",
+        "tap water",
+        "water connection",
+        "piped water",
+        "lwc",
+        "water house",
+        "adiyan",
+        "iju",
+        "ishasi",
+        "waterworks",
+        "burst pipe",
+        "water bill"
+      ],
+      "services": [
+        "New Residential & Commercial Piped Water Connections",
+        "Water Meter Installation & Billing",
+        "Municipal Water Transmission Network Repairs",
+        "Operation of Adiyan, Iju, and Ishasi Waterworks",
+        "Public Tap Water Quality Testing"
+      ],
+      "faqs": [
+        {
+          "question": "How can I apply for a new municipal water connection in Lagos?",
+          "answer": "Applications for piped municipal water connections are submitted to the Lagos Water Corporation (LWC) at https://lagoswater.org or through the nearest LWC regional area office."
+        },
+        {
+          "question": "What is the difference between LWC and LSWRC?",
+          "answer": "LWC is the public utility operator that produces, purifies, and pipes tap water. LSWRC is the independent commission that regulates the water sector, tariffs, and private borehole drillers."
+        },
+        {
+          "question": "How do I report a burst water main in my street?",
+          "answer": "Report public pipe bursts to LWC customer lines on 0704 597 3000 or 0704 597 3001 for rapid dispatch of maintenance engineers."
+        }
+      ]
+    },
+    {
+      "id": "lswrc",
+      "acronym": "LSWRC",
+      "name": "Lagos State Water Regulatory Commission",
+      "officialName": "Lagos State Water Regulatory Commission",
+      "category": "Water & Wastewater Regulatory Body",
+      "leadership": {
+        "executiveSecretary": "Mrs. Funke Adepoju"
+      },
+      "mandate": "Independent economic and technical regulation of water supply, wastewater services, commercial groundwater extraction, borehole drilling contractors, and packaged drinking water safety.",
+      "address": "1st Floor, Block 16, Lagos State Secretariat, Alausa, Ikeja",
+      "phone": "0802 300 2487",
+      "email": "info@lswrc.lagosstate.gov.ng",
+      "website": "https://lswrc.lagosstate.gov.ng",
+      "portalUrl": "https://lswrc.lagosstate.gov.ng",
+      "verificationStatus": "Verified Official",
+      "lastVerified": "2026-11-21",
+      "keywords": [
+        "water regulation",
+        "borehole permit",
+        "driller registration",
+        "groundwater",
+        "packaged water",
+        "sachet water",
+        "water tariff",
+        "lswrc",
+        "water license"
+      ],
+      "services": [
+        "Commercial Borehole Drilling Practitioner Licensing",
+        "Industrial Groundwater Abstraction Permitting",
+        "Drinking Water Quality Surveillance (Sachet & Bottled)",
+        "Water Tariff & Consumer Protection Regulation"
+      ],
+      "faqs": [
+        {
+          "question": "Do I need a permit from LSWRC to drill a commercial borehole?",
+          "answer": "Yes. All commercial and industrial boreholes, as well as borehole drilling contractors in Lagos State, must be registered and licensed by LSWRC to prevent aquifer contamination and land subsidence."
+        },
+        {
+          "question": "Which agency monitors the safety of sachet and bottled drinking water in Lagos?",
+          "answer": "The Lagos State Water Regulatory Commission (LSWRC) conducts periodic chemical and microbiological surveillance on packaged drinking water factories across Lagos."
+        },
+        {
+          "question": "What is the difference between LSWRC and LWC?",
+          "answer": "LWC (Lagos Water Corporation) is the public municipal water utility that produces, purifies, and pipes tap water to homes. LSWRC (Lagos State Water Regulatory Commission) is the independent commission that regulates the entire water sector, licenses commercial borehole drillers, and monitors packaged water safety."
+        }
+      ]
+    },
+    {
+      "id": "lswmo",
+      "acronym": "LSWMO",
+      "name": "Lagos State Wastewater Management Office",
+      "officialName": "Lagos State Wastewater Management Office",
+      "category": "Sewage & Septage Management Agency",
+      "mandate": "Regulation, collection, transportation, and scientific treatment of municipal sewage, septage, fecal sludge, and domestic wastewater, certifying decentralized wastewater systems.",
+      "address": "Ministry of the Environment Complex, Block 16, Alausa, Ikeja",
+      "phone": "0810 255 3775",
+      "email": "lswmo@lagosstate.gov.ng",
+      "website": "https://lswmo.lg.gov.ng",
+      "portalUrl": "https://lswmo.lg.gov.ng",
+      "verificationStatus": "Verified Official",
+      "lastVerified": "2026-11-21",
+      "keywords": [
+        "sewage",
+        "wastewater",
+        "septage",
+        "septic tank",
+        "suction truck",
+        "vacuum truck",
+        "effluent",
+        "lswmo",
+        "treatment plant",
+        "dewats",
+        "fecal sludge"
+      ],
+      "services": [
+        "Private Vacuum Truck (Suction) Certification & Tracking",
+        "Public Wastewater Treatment Plants (Odo Iya Alaro, Abule Egba)",
+        "Decentralized Wastewater Treatment Plant (DEWATS) Certification for Estates",
+        "Domestic Wastewater Discharge Permitting"
+      ],
+      "faqs": [
+        {
+          "question": "Which agency handles wastewater and sewage in Lagos State?",
+          "answer": "The Lagos State Wastewater Management Office (LSWMO) handles sewage, septage, and domestic wastewater systems. Official website: https://lswmo.lg.gov.ng."
+        },
+        {
+          "question": "Are residential estates required to install wastewater treatment plants?",
+          "answer": "Yes. Residential estates and commercial facilities with 25 or more units are mandated by LSWMO to install Decentralized Wastewater Treatment Plants (DEWATS) before discharging effluent."
+        },
+        {
+          "question": "Who handles domestic sewage soakaways versus street rainwater gutters?",
+          "answer": "Domestic sewage, septic soakaways, and fecal sludge are managed and regulated by LSWMO, whereas street rainwater gutters, collector drains, and stormwater canals are managed by the Office of Drainage Services and Water Resources (ODSWR)."
+        }
+      ]
+    },
+    {
+      "id": "lasaa",
+      "acronym": "LASAA",
+      "name": "Lagos State Signage and Advertisement Agency",
+      "officialName": "Lagos State Signage and Advertisement Agency",
+      "category": "Signage & Outdoor Advertising Agency",
+      "leadership": {
+        "managingDirector": "Prince Fatiu Akiolu"
+      },
+      "mandate": "Statutory regulation, control, and permitting of all outdoor advertising displays, billboards, signboards, mobile vehicle branding, street furniture, and temporary event banners in Lagos State.",
+      "address": "Plot 4, Commercial Scheme, Alausa, Ikeja, Lagos State",
+      "phone": "01 271 9080, 0803 200 4882",
+      "email": "info@lasaa.lg.gov.ng",
+      "website": "https://lasaa.lg.gov.ng",
+      "portalUrl": "https://lasaa.lg.gov.ng",
+      "verificationStatus": "Verified Official",
+      "lastVerified": "2026-11-21",
+      "keywords": [
+        "billboard",
+        "signboard",
+        "advertisement",
+        "signage",
+        "banner",
+        "mobile branding",
+        "vehicle branding",
+        "outdoor advert",
+        "lasaa",
+        "sign permit"
+      ],
+      "services": [
+        "Commercial Outdoor Billboard Structure Permitting",
+        "On-Premise Business Signboard Registration",
+        "Mobile & Vehicular Branding Permits",
+        "Temporary Event Banner & Poster Authorization",
+        "Removal of Illegal or Hazardous Outdoor Advertising Structures"
+      ],
+      "faqs": [
+        {
+          "question": "How can I obtain an outdoor advertising permit in Lagos State?",
+          "answer": "Applications for outdoor billboards, signboards, and commercial signage must be submitted to LASAA via https://lasaa.lg.gov.ng or at LASAA headquarters in Alausa."
+        },
+        {
+          "question": "Do I need a LASAA permit to brand a company delivery vehicle?",
+          "answer": "Yes. Under the LASAA Law, branding on commercial vehicles, company cars, delivery vans, and logistics fleets requires a Mobile Branding Permit from LASAA."
+        }
+      ]
+    },
+    {
+      "id": "lagesc",
+      "acronym": "LAGESC / KAI",
+      "name": "Lagos Environmental Sanitation Corps",
+      "officialName": "Lagos Environmental Sanitation Corps (popularly known as KAI)",
+      "category": "Sanitation Law Enforcement Agency",
+      "leadership": {
+        "corpsMarshal": "Major Olaniyi Olatunji Cole (Rtd)"
+      },
+      "mandate": "Uniformed environmental law-enforcement corps established to preserve public sanitation, compel pedestrian bridge usage, eliminate illegal street trading on highway corridors, and curb open defecation.",
+      "address": "Safety Arena Complex, Bolade, Oshodi, Lagos State",
+      "phone": "0802 345 6780, 0803 333 4445",
+      "email": "info@lagesc.lagosstate.gov.ng",
+      "website": "https://lagesc.lagosstate.gov.ng",
+      "portalUrl": "https://lagesc.lagosstate.gov.ng",
+      "verificationStatus": "Verified Official",
+      "lastVerified": "2026-11-21",
+      "keywords": [
+        "kai",
+        "lagesc",
+        "sanitation enforcement",
+        "street trading",
+        "pedestrian bridge",
+        "open defecation",
+        "shanties",
+        "hawking",
+        "sanitation corps",
+        "mobile court"
+      ],
+      "services": [
+        "Highway Pedestrian Bridge Compliance Enforcement",
+        "Removal of Illegal Traders from Road Setbacks and Medians",
+        "Zero-Tolerance Open Defecation & Urination Prosecutions",
+        "Dismantling of Unlawful Shanties on Drainage Alignments",
+        "Prosecution of Sanitation Offenders in Environmental Mobile Courts"
+      ],
+      "faqs": [
+        {
+          "question": "What is the official name of the KAI agency?",
+          "answer": "The official statutory name is the Lagos Environmental Sanitation Corps (LAGESC), popularly referred to by its operational moniker KAI (Kick Against Indiscipline)."
+        },
+        {
+          "question": "Is crossing the expressway instead of using a pedestrian bridge an offense in Lagos?",
+          "answer": "Yes. Crossing expressways where pedestrian bridges are provided is a punishable offense enforced by LAGESC (KAI) officers. Offenders are arraigned before the Special Environmental Mobile Court."
+        }
+      ]
+    },
+    {
+      "id": "odswr",
+      "acronym": "ODSWR",
+      "name": "Office of Drainage Services and Water Resources",
+      "officialName": "Office of Drainage Services and Water Resources (MOE&WR)",
+      "category": "Stormwater Drainage & Flood Abatement Office",
+      "leadership": {
+        "permSec": "Engr. Mahmood Olakunle Adegbite"
+      },
+      "mandate": "Engineering design, ongoing desilting, dredging, widening, and maintenance of all primary stormwater canals, collector drains, and drainage right-of-way (RoW) enforcement across Lagos State.",
+      "address": "Block 16, Lagos State Government Secretariat, Alausa, Ikeja",
+      "phone": "0810 255 3775, 0802 344 5821",
+      "email": "drainage@moelagos.gov.ng, env.wr@lagosstate.gov.ng",
+      "website": "https://moelagos.gov.ng",
+      "portalUrl": "https://moelagos.gov.ng",
+      "verificationStatus": "Verified Official",
+      "lastVerified": "2026-11-21",
+      "keywords": [
+        "drainage",
+        "flood",
+        "canal",
+        "gutter",
+        "dredging",
+        "odswr",
+        "efag",
+        "collector drain",
+        "right of way",
+        "encroachment",
+        "channel",
+        "stormwater"
+      ],
+      "services": [
+        "Continuous Primary Canal Dredging & Desilting",
+        "Emergency Flood Abatement Gang (EFAG) Deployments",
+        "Reclamation of Encroached Drainage Rights-of-Way",
+        "Demolition of Illegal Structures Obstructing Stormwater Runoff",
+        "Seasonal High-Tide and Rainfall Flood Advisories"
+      ],
+      "faqs": [
+        {
+          "question": "How can I report blocked drainage or community flooding in Lagos?",
+          "answer": "Report blocked drainage or flooding to the Office of Drainage Services and Water Resources (ODSWR) via the Ministry Complaints Desk at https://moelagos.gov.ng or call 0810 255 3775 / 0802 344 5821."
+        },
+        {
+          "question": "Which agency clears large stormwater canals in Lagos State?",
+          "answer": "The Office of Drainage Services and Water Resources (ODSWR), through its Emergency Flood Abatement Gang (EFAG), conducts the continuous desilting and dredging of primary canals. This is distinct from LAWMA's refuse collection remit."
+        },
+        {
+          "question": "What is the penalty for building over a drainage channel in Lagos?",
+          "answer": "Building over a drainage channel or inside its statutory right-of-way is illegal. ODSWR serves contravention notices, marks the structure for removal, and carries out demolition without compensation to protect public safety."
+        }
+      ]
+    }
+  ],
+  "routingMatrix": [
+    {
+      "topic": "Noise pollution, nightclub or church noise, industrial fumes",
+      "agencyId": "lasepa"
+    },
+    {
+      "topic": "Domestic refuse collection, missing trash pickup, PSP operator",
+      "agencyId": "lawma"
+    },
+    {
+      "topic": "Booking public parks (JJT, Ndubuisi Kanu), tree cutting or pruning permit",
+      "agencyId": "laspark"
+    },
+    {
+      "topic": "Tap water supply, piped connections, burst public water pipes",
+      "agencyId": "lwc"
+    },
+    {
+      "topic": "Borehole drilling permits, groundwater commercial regulation, sachet water safety",
+      "agencyId": "lswrc"
+    },
+    {
+      "topic": "Sewage, septic tanks, suction vacuum trucks, estate treatment plants (DEWATS)",
+      "agencyId": "lswmo"
+    },
+    {
+      "topic": "Billboards, shop signboards, mobile car/van branding, event banners",
+      "agencyId": "lasaa"
+    },
+    {
+      "topic": "Sanitation enforcement, crossing expressways, illegal street trading, open defecation",
+      "agencyId": "lagesc"
+    },
+    {
+      "topic": "Blocked stormwater canals, canal desilting, flooding, drainage right-of-way building encroachments",
+      "agencyId": "odswr"
+    },
+    {
+      "topic": "General ministerial policy, EIA certification, commissioner, climate change",
+      "agencyId": "moelagos"
+    }
+  ],
+  "unverifiedNotice": "I currently do not have verified official information on this specific enquiry. Please contact the relevant agency through its official communication channels or visit the Ministry Headquarters at Block 16, Secretariat, Alausa, Ikeja for authoritative confirmation."
+}

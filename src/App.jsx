@@ -22,6 +22,7 @@ import PublicationsPage from './pages/PublicationsPage';
 import GalleryPage from './pages/GalleryPage';
 import ContactPage from './pages/ContactPage';
 import CommissionerPage from './pages/CommissionerPage';
+import AIAssistantModal from './components/AIAssistantModal';
 
 // Administrative CMS Portal
 import AdminPortal from './pages/admin/AdminPortal';
@@ -59,6 +60,7 @@ function AppContent() {
   });
 
   const [complaintsOpen, setComplaintsOpen] = useState(false);
+  const [aiAssistantOpen, setAiAssistantOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
   const [activeCategory, setActiveCategory] = useState('All');
 
@@ -102,6 +104,7 @@ function AppContent() {
         <Header 
           onOpenComplaints={() => setComplaintsOpen(true)}
           onSearchClick={handleSearchClick}
+          onOpenAIAssistant={() => setAiAssistantOpen(true)}
         />
       )}
 
@@ -196,8 +199,19 @@ function AppContent() {
       {!isAdmin && (
         <FloatingActionButton 
           onOpenComplaints={() => setComplaintsOpen(true)} 
+          onOpenAIAssistant={() => setAiAssistantOpen(true)}
         />
       )}
+
+      {/* Smart AI Ministry Assistant (RAG 2.0 Information Officer) */}
+      <AIAssistantModal 
+        isOpen={aiAssistantOpen} 
+        onClose={() => setAiAssistantOpen(false)}
+        onOpenComplaints={() => {
+          setAiAssistantOpen(false);
+          setComplaintsOpen(true);
+        }}
+      />
 
       {/* Interactive Complaints Desk Modal */}
       <ComplaintsDeskModal 

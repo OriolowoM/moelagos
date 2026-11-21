@@ -4,7 +4,7 @@ import {
   LayoutDashboard, Newspaper, FileText, Layers, 
   Users, Download, Image, AlertTriangle, Sliders, 
   Settings, LogOut, Shield, CheckCircle, ChevronRight,
-  Menu, X, Lock, Eye, Bell, ArrowLeft
+  Menu, X, Lock, Eye, Bell, ArrowLeft, Bot, Sparkles
 } from 'lucide-react';
 
 import AdminDashboard from './AdminDashboard';
@@ -14,6 +14,7 @@ import AdminProjectsManager from './AdminProjectsManager';
 import AdminEnquiriesManager from './AdminEnquiriesManager';
 import AdminMediaLibrary from './AdminMediaLibrary';
 import AdminUsersManager from './AdminUsersManager';
+import AdminAIKnowledgeManager from './AdminAIKnowledgeManager';
 import AdminSettings from './AdminSettings';
 
 export default function AdminPortal({ posts, onUpdatePosts }) {
@@ -73,6 +74,7 @@ export default function AdminPortal({ posts, onUpdatePosts }) {
     { id: 'pages', name: 'Institutional Pages', icon: FileText, badge: '81' },
     { id: 'projects', name: 'Projects & Infrastructure', icon: Layers, badge: '8' },
     { id: 'enquiries', name: 'Citizen Complaints Desk', icon: AlertTriangle, badge: 'Live' },
+    { id: 'ai-knowledge', name: 'AI Assistant & Knowledge', icon: Bot, badge: 'RAG' },
     { id: 'media', name: 'Media Library', icon: Image, badge: '881' },
     { id: 'users', name: 'Users & Roles', icon: Users, badge: 'Staff' },
     { id: 'settings', name: 'Portal Settings', icon: Settings }
@@ -356,6 +358,12 @@ export default function AdminPortal({ posts, onUpdatePosts }) {
 
           {activeTab === 'enquiries' && (
             <AdminEnquiriesManager 
+              userRole={currentRole}
+            />
+          )}
+
+          {activeTab === 'ai-knowledge' && (
+            <AdminAIKnowledgeManager 
               userRole={currentRole}
             />
           )}
