@@ -77,7 +77,7 @@ jobs:
           port: ${{ secrets.CPANEL_PORT || 21 }}
           protocol: ${{ secrets.CPANEL_PROTOCOL || 'ftp' }}
           local-dir: dist/
-          server-dir: ${{ secrets.CPANEL_REMOTE_DIR || './' }}
+          server-dir: ${{ secrets.CPANEL_REMOTE_DIR || 'public_html/' }}
           dangerous-clean-slate: false
           exclude: |
             **/.git*
