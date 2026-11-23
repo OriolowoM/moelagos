@@ -87,7 +87,7 @@ export default function PermanentSecretaryOESPage({ posts = [] }) {
                   className="w-full h-full object-cover object-top"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/uploads/2022/08/PS-Environmnet-320x414.png";
+                    e.target.src = "/officials/dr-gaji-tajudeen.jpg";
                   }}
                 />
                 

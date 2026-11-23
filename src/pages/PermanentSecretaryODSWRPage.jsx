@@ -87,7 +87,7 @@ export default function PermanentSecretaryODSWRPage({ posts = [] }) {
                   className="w-full h-full object-cover object-top"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/uploads/2024/10/WhatsApp-Image-2024-10-18-at-15.50.28_9b2029ff-e1729287637986.jpg";
+                    e.target.src = "/officials/engr-mahmood-adegbite.jpg";
                   }}
                 />
                 

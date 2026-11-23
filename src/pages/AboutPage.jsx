@@ -60,12 +60,12 @@ export default function AboutPage() {
   const parastatals = [
     { name: 'LAWMA', full: 'Lagos State Waste Management Authority', url: 'https://lawma.gov.ng', role: 'Solid waste management & PSP logistics' },
     { name: 'LASEPA', full: 'Lagos State Environmental Protection Agency', url: 'https://lasepa.gov.ng', role: 'Air, water & industrial pollution monitoring' },
-    { name: 'LASPARK', full: 'Lagos State Parks and Gardens Agency', url: 'https://laspark.lg.gov.ng', role: 'Urban greening, tree planting & recreational parks' },
+    { name: 'LASPARK', full: 'Lagos State Parks and Gardens Agency', url: 'https://laspark.lagosstate.gov.ng', role: 'Urban greening, tree planting & recreational parks' },
     { name: 'LASAA', full: 'Lagos State Signage & Advertisement Agency', url: 'https://lasaa.lg.gov.ng', role: 'Outdoor advertising & aesthetic signage regulation' },
-    { name: 'LAGESC / KAI', full: 'Lagos Environmental Sanitation Corps', url: '#', role: 'Enforcement of environmental sanitation laws' },
-    { name: 'LSWMO', full: 'Lagos State Wastewater Management Office', url: '#', role: 'Decentralized wastewater treatment & sewage safety' },
+    { name: 'LAGESC / KAI', full: 'Lagos Environmental Sanitation Corps', url: 'https://lagesc.lagosstate.gov.ng', role: 'Enforcement of environmental sanitation laws' },
+    { name: 'LSWMO', full: 'Lagos State Wastewater Management Office', url: 'https://lswmo.lg.gov.ng', role: 'Decentralized wastewater treatment & sewage safety' },
     { name: 'LWC', full: 'Lagos Water Corporation', url: 'https://lagoswater.org', role: 'Potable public water supply infrastructure' },
-    { name: 'LAWRECO', full: 'Lagos State Water Regulatory Commission', url: '#', role: 'Economic and technical regulation of water services' }
+    { name: 'LSWRC / LAWRECO', full: 'Lagos State Water Regulatory Commission', url: 'https://lswrc.lagosstate.gov.ng', role: 'Economic and technical regulation of water services' }
   ];
 
   return (

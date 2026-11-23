@@ -87,7 +87,7 @@ export default function SpecialAdviserPage({ posts = [] }) {
                   className="w-full h-full object-cover object-top"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/uploads/2024/10/Olkunle-Rotimi-SA-Environment.jpg";
+                    e.target.src = "/officials/engr-olakunle-rotimi-akodu.jpg";
                   }}
                 />
                 

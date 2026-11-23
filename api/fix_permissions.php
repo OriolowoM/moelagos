@@ -8,6 +8,7 @@ header('Content-Type: application/json; charset=utf-8');
 
 $baseDir = realpath(__DIR__ . '/../');
 $uploadsDir = $baseDir . '/uploads';
+$apiDataDir = __DIR__ . '/data';
 
 $report = [
     'server_time'   => date('Y-m-d H:i:s'),
@@ -15,10 +16,22 @@ $report = [
     'base_dir'      => $baseDir,
     'uploads_exist' => is_dir($uploadsDir),
     'uploads_perms' => is_dir($uploadsDir) ? substr(sprintf('%o', fileperms($uploadsDir)), -4) : 'N/A',
+    'api_data_exist'=> is_dir($apiDataDir),
     'dirs_fixed'    => 0,
     'files_fixed'   => 0,
     'sample_images' => []
 ];
+
+// Ensure api/data directory exists with write permissions
+if (!is_dir($apiDataDir)) {
+    @mkdir($apiDataDir, 0775, true);
+}
+@chmod($apiDataDir, 0775);
+if (is_dir($apiDataDir)) {
+    foreach (glob($apiDataDir . '/*') as $file) {
+        @chmod($file, 0664);
+    }
+}
 
 if (is_dir($uploadsDir)) {
     // Recursively fix directory and file permissions

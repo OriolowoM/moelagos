@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Trophy, Calendar, Clock, Award, QrCode, 
   CheckCircle2, ArrowRight, Sparkles, Trees 
 } from 'lucide-react';
 
-export default function WorldEnvironmentDayBanner() {
+export default function WorldEnvironmentDayBanner({ onOpenRegister }) {
   const steps = [
     { num: '01', title: 'Register Online', desc: 'Sign up on the Lagos Environmental Portal' },
     { num: '02', title: 'Plant Your Tree', desc: 'Select an indigenous species & tag location' },
@@ -93,13 +94,24 @@ export default function WorldEnvironmentDayBanner() {
 
             {/* CTA Button */}
             <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
-              <a 
-                href="#register" 
-                className="inline-flex items-center gap-2 bg-lagos-orange hover:bg-lagos-darkOrange text-white font-bold px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm shadow-xl transition transform hover:-translate-y-0.5"
-              >
-                <span>Register for Tree Challenge</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
+              {onOpenRegister ? (
+                <button 
+                  type="button"
+                  onClick={onOpenRegister}
+                  className="inline-flex items-center gap-2 bg-lagos-orange hover:bg-lagos-darkOrange text-white font-bold px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm shadow-xl transition transform hover:-translate-y-0.5 active:scale-95 cursor-pointer"
+                >
+                  <span>Register for Tree Challenge</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              ) : (
+                <Link 
+                  to="/my-tree-challenge"
+                  className="inline-flex items-center gap-2 bg-lagos-orange hover:bg-lagos-darkOrange text-white font-bold px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm shadow-xl transition transform hover:-translate-y-0.5"
+                >
+                  <span>Register for Tree Challenge</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              )}
               <span className="text-xs text-green-300">
                 Participation is free for all Lagos residents.
               </span>
@@ -134,9 +146,18 @@ export default function WorldEnvironmentDayBanner() {
               ))}
             </div>
 
-            {/* Scannable QR Code Box */}
-            <div className="bg-white p-3.5 sm:p-4 rounded-xl text-gray-900 flex items-center gap-3 sm:gap-4 shadow-lg">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gray-100 rounded-lg p-1.5 flex items-center justify-center border border-gray-200 flex-shrink-0">
+            {/* Scannable / Clickable QR Code Box */}
+            <Link 
+              to="/my-tree-challenge"
+              onClick={(e) => {
+                if (onOpenRegister) {
+                  e.preventDefault();
+                  onOpenRegister();
+                }
+              }}
+              className="group bg-white p-3.5 sm:p-4 rounded-xl text-gray-900 flex items-center gap-3 sm:gap-4 shadow-lg hover:shadow-xl transition border border-transparent hover:border-emerald-300 block cursor-pointer"
+            >
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gray-100 rounded-lg p-1.5 flex items-center justify-center border border-gray-200 flex-shrink-0 group-hover:scale-105 transition">
                 <svg viewBox="0 0 100 100" className="w-full h-full text-gray-900 fill-current">
                   <rect x="0" y="0" width="30" height="30" rx="3" fill="#000" />
                   <rect x="5" y="5" width="20" height="20" fill="#fff" />
@@ -170,18 +191,19 @@ export default function WorldEnvironmentDayBanner() {
                 </svg>
               </div>
 
-              <div className="min-w-0">
-                <div className="text-xs font-bold text-gray-900 uppercase tracking-wide">
-                  Scan to Register
+              <div className="min-w-0 flex-1">
+                <div className="text-xs font-bold text-gray-900 uppercase tracking-wide group-hover:text-lagos-green transition flex items-center justify-between">
+                  <span>Scan or Click to Register</span>
+                  <span className="text-[10px] text-lagos-orange">Open Form →</span>
                 </div>
                 <div className="text-[11px] text-gray-600 mt-0.5 line-clamp-2">
-                  Scan with mobile camera to launch portal registration.
+                  Launch the portal registration form to claim your Participant ID.
                 </div>
                 <div className="text-[10px] text-lagos-green font-bold mt-0.5 truncate">
                   moelagos.gov.ng/my-tree-challenge
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

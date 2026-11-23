@@ -8,6 +8,7 @@ import PublicNoticeModal from './components/PublicNoticeModal';
 import FloatingActionButton from './components/FloatingActionButton';
 import ComplaintsDeskModal from './components/ComplaintsDeskModal';
 import PostDetailModal from './components/PostDetailModal';
+import TreeChallengeModal from './components/TreeChallengeModal';
 
 // Public Pages
 import HomePage from './pages/HomePage';
@@ -25,6 +26,9 @@ import CommissionerPage from './pages/CommissionerPage';
 import SpecialAdviserPage from './pages/SpecialAdviserPage';
 import PermanentSecretaryOESPage from './pages/PermanentSecretaryOESPage';
 import PermanentSecretaryODSWRPage from './pages/PermanentSecretaryODSWRPage';
+import TreeChallengePage from './pages/TreeChallengePage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import AccessibilityPage from './pages/AccessibilityPage';
 import AIAssistantModal from './components/AIAssistantModal';
 
 // Administrative CMS Portal
@@ -77,6 +81,7 @@ function AppContent() {
   });
 
   const [complaintsOpen, setComplaintsOpen] = useState(false);
+  const [treeChallengeOpen, setTreeChallengeOpen] = useState(false);
   const [aiAssistantOpen, setAiAssistantOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
   const [activeCategory, setActiveCategory] = useState('All');
@@ -136,6 +141,7 @@ function AppContent() {
                 posts={posts} 
                 onSelectPost={(post) => setSelectedPost(post)} 
                 onOpenComplaints={() => setComplaintsOpen(true)}
+                onOpenTreeChallenge={() => setTreeChallengeOpen(true)}
                 activeCategory={activeCategory}
                 onFilterCategory={handleFilterFromIcon}
               />
@@ -203,6 +209,16 @@ function AppContent() {
             element={<ContactPage onOpenComplaints={() => setComplaintsOpen(true)} />} 
           />
 
+          {/* World Environment Day - My Tree Challenge Dedicated Campaign */}
+          <Route path="/my-tree-challenge" element={<TreeChallengePage onOpenRegister={() => setTreeChallengeOpen(true)} />} />
+          <Route path="/tree-challenge" element={<TreeChallengePage onOpenRegister={() => setTreeChallengeOpen(true)} />} />
+
+          {/* Privacy Policy & Accessibility Statements */}
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/accessibility" element={<AccessibilityPage />} />
+          <Route path="/accessibility-statement" element={<AccessibilityPage />} />
+
           {/* Administrative CMS Portal */}
           <Route 
             path="/admin/*" 
@@ -232,6 +248,7 @@ function AppContent() {
       {!isAdmin && (
         <Footer 
           onOpenComplaints={() => setComplaintsOpen(true)} 
+          onOpenTreeChallenge={() => setTreeChallengeOpen(true)}
         />
       )}
 
@@ -257,6 +274,12 @@ function AppContent() {
       <ComplaintsDeskModal 
         isOpen={complaintsOpen} 
         onClose={() => setComplaintsOpen(false)} 
+      />
+
+      {/* World Environment Day "My Tree Challenge" Registration Modal */}
+      <TreeChallengeModal 
+        isOpen={treeChallengeOpen} 
+        onClose={() => setTreeChallengeOpen(false)} 
       />
 
       {/* Article Detail Reader Modal (Quick View) */}

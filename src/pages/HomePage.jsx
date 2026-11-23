@@ -7,7 +7,7 @@ import CommissionerProfile from '../components/CommissionerProfile';
 import VideoMessages from '../components/VideoMessages';
 import NewsSection from '../components/NewsSection';
 
-export default function HomePage({ posts, onSelectPost, onOpenComplaints, activeCategory, onFilterCategory }) {
+export default function HomePage({ posts, onSelectPost, onOpenComplaints, onOpenTreeChallenge, activeCategory, onFilterCategory }) {
   return (
     <>
       {/* Hero Section (Featured Slider with top 3 recent items) */}
@@ -22,7 +22,7 @@ export default function HomePage({ posts, onSelectPost, onOpenComplaints, active
       />
 
       {/* Featured Graphic Banner: World Environment Day 2026 (My Tree Challenge) */}
-      <WorldEnvironmentDayBanner />
+      <WorldEnvironmentDayBanner onOpenRegister={onOpenTreeChallenge} />
 
       {/* Ministry Overview & Dual Offices (OES&WR and ODS&WR) */}
       <MinistryOverview />

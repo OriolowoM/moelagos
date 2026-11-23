@@ -37,8 +37,10 @@ export default function CommissionerProfile() {
                     fetchPriority="high"
                     loading="eager"
                     onError={() => {
-                      // Graceful fallback to absolute official URL without /wp-content/
-                      if (imgSrc !== 'https://moelagos.gov.ng/uploads/2025/05/TokunboWahab.jpg') {
+                      // Graceful fallback to root copy or official URL
+                      if (imgSrc !== '/tokunbowahab.jpg') {
+                        setImgSrc('/tokunbowahab.jpg');
+                      } else if (imgSrc !== 'https://moelagos.gov.ng/uploads/2025/05/TokunboWahab.jpg') {
                         setImgSrc('https://moelagos.gov.ng/uploads/2025/05/TokunboWahab.jpg');
                       }
                     }}

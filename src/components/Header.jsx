@@ -67,11 +67,11 @@ export default function Header({ onOpenComplaints, onSearchClick, onOpenAIAssist
   const agencies = [
     { name: 'LASEPA', full: 'Lagos State Environmental Protection Agency', url: 'https://lasepa.gov.ng', tag: 'Pollution & Air Quality' },
     { name: 'LAWMA', full: 'Lagos State Waste Management Authority', url: 'https://lawma.gov.ng', tag: 'Waste & PSP Logistics' },
-    { name: 'LASPARK', full: 'Lagos State Parks and Gardens Agency', url: 'https://laspark.lg.gov.ng', tag: 'Urban Greening & Parks' },
+    { name: 'LASPARK', full: 'Lagos State Parks and Gardens Agency', url: 'https://laspark.lagosstate.gov.ng', tag: 'Urban Greening & Parks' },
     { name: 'LASAA', full: 'Lagos State Signage & Advertisement Agency', url: 'https://lasaa.lg.gov.ng', tag: 'Outdoor Signage Control' },
-    { name: 'LAGESC / KAI', full: 'Lagos Environmental Sanitation Corps', url: '#', tag: 'Law Enforcement' },
-    { name: 'LSWMO', full: 'Lagos State Wastewater Management Office', url: '#', tag: 'Wastewater Treatment' },
-    { name: 'LAWRECO', full: 'Lagos State Water Regulatory Commission', url: '#', tag: 'Water Licensing & Tariffs' },
+    { name: 'LAGESC / KAI', full: 'Lagos Environmental Sanitation Corps', url: 'https://lagesc.lagosstate.gov.ng', tag: 'Law Enforcement' },
+    { name: 'LSWMO', full: 'Lagos State Wastewater Management Office', url: 'https://lswmo.lg.gov.ng', tag: 'Wastewater Treatment' },
+    { name: 'LAWRECO / LSWRC', full: 'Lagos State Water Regulatory Commission', url: 'https://lswrc.lagosstate.gov.ng', tag: 'Water Licensing & Tariffs' },
     { name: 'LWC', full: 'Lagos Water Corporation', url: 'https://lagoswater.org', tag: 'Potable Water Distribution' }
   ];
 

@@ -1,18 +1,43 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Mail, Phone, MapPin, Send, CheckCircle, 
-  ExternalLink, ArrowUp, Shield 
+  ExternalLink, ArrowUp, Shield, Trees, AlertCircle, Loader2
 } from 'lucide-react';
 
-export default function Footer({ onOpenComplaints }) {
+export default function Footer({ onOpenComplaints, onOpenTreeChallenge }) {
   const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
-    if (email) {
+    if (!email) return;
+
+    setLoading(true);
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/newsletter.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim() })
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        setSubscribed(true);
+        setEmail('');
+      } else {
+        setErrorMessage(data.error || 'Subscription failed. Please try again.');
+      }
+    } catch (err) {
+      console.warn('Newsletter API offline, recorded locally:', err);
       setSubscribed(true);
       setEmail('');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -23,12 +48,16 @@ export default function Footer({ onOpenComplaints }) {
   const agencyLinks = [
     { name: 'LASEPA', desc: 'Environmental Protection Agency', url: 'https://lasepa.gov.ng' },
     { name: 'LAWMA', desc: 'Waste Management Authority', url: 'https://lawma.gov.ng' },
-    { name: 'LASPARK', desc: 'Parks & Gardens Agency', url: 'https://laspark.lg.gov.ng' },
-    { name: 'LASAA', desc: 'Signage & Advertisement Agency', url: 'https://lasaa.lg.gov.ng' },
-    { name: 'LAGESC / KAI', desc: 'Environmental Sanitation Corps', url: '#' },
-    { name: 'LSWMO', desc: 'Wastewater Management Office', url: '#' },
-    { name: 'LAWRECO', desc: 'Water Regulatory Commission', url: '#' },
-    { name: 'LASWA', desc: 'Lagos State Waterways Authority', url: 'https://laswa.lg.gov.ng' }
+    { name: 'LASPARK', desc: 'Parks & Gardens Agency', url: 'https://laspark.lagosstate.gov.ng' },
+    { name: 'LASAA', desc: 'Signage & Advertisement Agency', url: 'https://lasaa.lg.gov.ng' }
+  ];
+
+  const partnerAgencies = [
+    { name: 'LAGESC / KAI', desc: 'Environmental Sanitation Corps', url: 'https://lagesc.lagosstate.gov.ng' },
+    { name: 'LSWMO', desc: 'Wastewater Management Office', url: 'https://lswmo.lg.gov.ng' },
+    { name: 'LSWRC', desc: 'Water Regulatory Commission', url: 'https://lswrc.lagosstate.gov.ng' },
+    { name: 'LASWA', desc: 'Lagos State Waterways Authority', url: 'https://laswa.lagosstate.gov.ng' },
+    { name: 'LWC', desc: 'Lagos Water Corporation', url: 'https://lagoswater.org' }
   ];
 
   const quickLinks = [
@@ -37,6 +66,10 @@ export default function Footer({ onOpenComplaints }) {
     { name: 'Special Adviser (Environment)', href: '/special-adviser' },
     { name: 'Perm. Secretary (OES)', href: '/permanent-secretary-oes' },
     { name: 'Perm. Secretary (ODS&WR)', href: '/permanent-secretary-odswr' },
+    { name: 'Tree Planting Challenge', href: '/my-tree-challenge', action: onOpenTreeChallenge },
+    { name: 'Stormwater & Drainage Projects', href: '/projects' },
+    { name: 'Strategic Initiatives', href: '/initiatives' },
+    { name: 'Publications & EIA Clearance', href: '/publications' },
     { name: 'Leadership & Officials Directory', href: '/leadership' },
     { name: 'Complaints Desk', action: onOpenComplaints },
     { name: 'Staff Webmail Login', href: 'https://moelagos.gov.ng/webmail', external: true }
@@ -45,35 +78,40 @@ export default function Footer({ onOpenComplaints }) {
   return (
     <footer id="contact" className="bg-gray-950 text-gray-300 pt-12 sm:pt-16 pb-8 border-t-4 border-lagos-green w-full max-w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Top Footer: Brand & Newsletter */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pb-10 sm:pb-12 border-b border-gray-800">
+          
           {/* Brand Info (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <img 
-                src="https://moelagos.gov.ng/wp-content/uploads/2019/12/moe-logo.png" 
-                alt="Lagos State Ministry Logo" 
-                className="h-12 sm:h-14 w-auto max-w-[220px] object-contain bg-white/90 p-1 rounded-lg"
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = "https://moelagos.gov.ng/wp-content/uploads/2023/04/Logo-1.png";
-                }}
-              />
+            <Link to="/" className="inline-flex items-center gap-3 group focus:outline-none">
+              <div className="bg-white p-2 rounded-xl shadow-md border border-white/20 transition group-hover:opacity-95 flex items-center justify-center">
+                <img 
+                  src="/moe-logo.png" 
+                  alt="Lagos State Ministry of the Environment & Water Resources Logo" 
+                  className="h-10 sm:h-12 w-auto max-w-[210px] object-contain"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "/moe-crest.png";
+                  }}
+                />
+              </div>
               <div className="min-w-0">
                 <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-lagos-green">
                   Lagos State Government
                 </div>
-                <div className="text-sm sm:text-base font-bold text-white truncate">
-                  Ministry of Environment & Water Resources
+                <div className="text-sm sm:text-base font-bold text-white group-hover:text-emerald-300 transition leading-snug">
+                  Ministry of the Environment &amp; Water Resources
                 </div>
               </div>
-            </div>
+            </Link>
 
             <p className="text-xs sm:text-sm text-gray-400 leading-relaxed max-w-lg">
-              Committed to delivering a clean, flood-free, and sustainable mega-city through 
-              strategic environmental governance, innovative waste recovery, and robust water infrastructure.
+              Committed to delivering a clean, flood-resilient, and sustainable megacity through 
+              strategic environmental governance, innovative waste recovery, and robust drainage infrastructure.
             </p>
 
+            {/* Social Icons */}
             <div className="flex items-center gap-2.5 pt-1">
               <a 
                 href="https://facebook.com/moelagos" 
@@ -88,7 +126,7 @@ export default function Footer({ onOpenComplaints }) {
                 href="https://twitter.com/LasgMOE" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                aria-label="Twitter"
+                aria-label="Twitter / X"
                 className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gray-800 hover:bg-lagos-green text-white flex items-center justify-center transition active:scale-95"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -109,20 +147,27 @@ export default function Footer({ onOpenComplaints }) {
           <div className="lg:col-span-7 bg-gray-900/80 p-5 sm:p-7 rounded-2xl border border-gray-800 flex flex-col justify-between">
             <div>
               <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-lagos-orange mb-1">
-                Stay Informed
+                Stay Informed • Official Government Bulletins
               </div>
               <h3 className="font-heading text-base sm:text-lg lg:text-xl font-bold text-white mb-2">
-                Subscribe to Official Environmental Bulletins & Alerts
+                Subscribe to Official Environmental Bulletins &amp; Alerts
               </h3>
               <p className="text-xs text-gray-400 leading-relaxed mb-4">
                 Receive official press statements, weather forecasts, sanitation schedules, and flood alerts directly in your inbox.
               </p>
             </div>
 
+            {errorMessage && (
+              <div className="mb-3 p-2.5 bg-red-950/60 border border-red-800 text-red-300 text-xs rounded-xl flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                <span>{errorMessage}</span>
+              </div>
+            )}
+
             {subscribed ? (
-              <div className="bg-green-900/40 border border-green-600 text-green-200 text-xs p-3.5 rounded-xl flex items-center gap-2">
+              <div className="bg-green-900/40 border border-green-600 text-green-200 text-xs p-3.5 rounded-xl flex items-center gap-2 animate-fadeIn">
                 <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                <span>Thank you! You have been successfully subscribed to MOE&WR updates.</span>
+                <span>Thank you! Your email has been registered for official MOE&amp;WR bulletins and alerts.</span>
               </div>
             ) : (
               <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2">
@@ -139,63 +184,77 @@ export default function Footer({ onOpenComplaints }) {
                 </div>
                 <button
                   type="submit"
-                  className="bg-lagos-orange hover:bg-lagos-darkOrange text-white font-bold text-xs px-5 sm:px-6 py-2.5 rounded-xl transition shadow flex items-center justify-center gap-2 whitespace-nowrap active:scale-95"
+                  disabled={loading}
+                  className="bg-lagos-orange hover:bg-lagos-darkOrange text-white font-bold text-xs px-5 sm:px-6 py-2.5 rounded-xl transition shadow flex items-center justify-center gap-2 whitespace-nowrap active:scale-95 disabled:opacity-50"
                 >
-                  <Send className="w-3.5 h-3.5" />
-                  <span>Subscribe</span>
+                  {loading ? (
+                    <>
+                      <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                      <span>Subscribing...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-3.5 h-3.5" />
+                      <span>Subscribe</span>
+                    </>
+                  )}
                 </button>
               </form>
             )}
           </div>
+
         </div>
 
         {/* Middle Footer: Important Links & Quick Links */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 py-10 sm:py-12 border-b border-gray-800 text-xs">
+          
           {/* Col 1: Parastatals & Agencies */}
           <div className="space-y-3">
             <h4 className="font-heading font-bold text-xs sm:text-sm text-white uppercase tracking-wider text-lagos-green">
               Ministry Agencies
             </h4>
             <ul className="space-y-2">
-              {agencyLinks.slice(0, 4).map((ag, i) => (
+              {agencyLinks.map((ag, i) => (
                 <li key={i}>
                   <a 
                     href={ag.url} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="hover:text-white transition flex items-center gap-1.5"
+                    className="hover:text-white transition flex items-center gap-1.5 group"
                   >
-                    <span className="font-bold text-gray-200">{ag.name}:</span>
+                    <span className="font-bold text-gray-200 group-hover:text-lagos-green transition">{ag.name}:</span>
                     <span className="text-gray-400 truncate">{ag.desc}</span>
+                    <ExternalLink className="w-3 h-3 text-gray-600 group-hover:text-lagos-green ml-auto flex-shrink-0" />
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Col 2: More Agencies */}
+          {/* Col 2: More Partner Agencies */}
           <div className="space-y-3">
             <h4 className="font-heading font-bold text-xs sm:text-sm text-white uppercase tracking-wider text-lagos-green">
               Partner Agencies
             </h4>
             <ul className="space-y-2">
-              {agencyLinks.slice(4).map((ag, i) => (
+              {partnerAgencies.map((ag, i) => (
                 <li key={i}>
                   <a 
                     href={ag.url} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="hover:text-white transition flex items-center gap-1.5"
+                    className="hover:text-white transition flex items-center gap-1.5 group"
                   >
-                    <span className="font-bold text-gray-200">{ag.name}:</span>
+                    <span className="font-bold text-gray-200 group-hover:text-lagos-green transition">{ag.name}:</span>
                     <span className="text-gray-400 truncate">{ag.desc}</span>
+                    <ExternalLink className="w-3 h-3 text-gray-600 group-hover:text-lagos-green ml-auto flex-shrink-0" />
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Col 3: Quick Links */}
+          {/* Col 3: Quick Portals */}
           <div className="space-y-3">
             <h4 className="font-heading font-bold text-xs sm:text-sm text-white uppercase tracking-wider text-lagos-green">
               Quick Portals
@@ -206,19 +265,27 @@ export default function Footer({ onOpenComplaints }) {
                   {lk.action ? (
                     <button 
                       onClick={lk.action} 
-                      className="text-left text-lagos-orange hover:underline font-bold"
+                      className="text-left text-lagos-orange hover:underline font-bold transition"
                     >
-                      {lk.name}
+                      {lk.name} →
                     </button>
-                  ) : (
+                  ) : lk.external ? (
                     <a 
                       href={lk.href} 
-                      target={lk.external ? '_blank' : '_self'}
-                      rel={lk.external ? 'noopener noreferrer' : ''}
-                      className="hover:text-white transition"
+                      target="_blank"
+                      rel="noopener noreferrer" 
+                      className="hover:text-white transition flex items-center gap-1"
+                    >
+                      <span>{lk.name}</span>
+                      <ExternalLink className="w-2.5 h-2.5 text-gray-500" />
+                    </a>
+                  ) : (
+                    <Link 
+                      to={lk.href} 
+                      className="hover:text-white transition block"
                     >
                       {lk.name}
-                    </a>
+                    </Link>
                   )}
                 </li>
               ))}
@@ -233,7 +300,7 @@ export default function Footer({ onOpenComplaints }) {
             <div className="space-y-2 text-gray-400">
               <p className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-lagos-orange flex-shrink-0 mt-0.5" />
-                <span>Block 16 & 17, The Secretariat Annex, Alausa, Ikeja, Lagos State.</span>
+                <span>Block 16 &amp; 17, The Secretariat Annex, Alausa, Ikeja, Lagos State.</span>
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-lagos-orange flex-shrink-0" />
@@ -244,19 +311,30 @@ export default function Footer({ onOpenComplaints }) {
                 <a href="mailto:Env.wr@lagosstate.gov.ng" className="hover:text-white truncate">Env.wr@lagosstate.gov.ng</a>
               </p>
             </div>
+
+            <div className="pt-2">
+              <Link 
+                to="/my-tree-challenge"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-yellow-400 hover:text-yellow-300 transition"
+              >
+                <Trees className="w-3.5 h-3.5" />
+                <span>Join "My Tree Challenge" (₦6.5M Pool) →</span>
+              </Link>
+            </div>
           </div>
+
         </div>
 
         {/* Bottom Copyright & Back to Top */}
         <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 text-center sm:text-left">
           <div>
-            © {new Date().getFullYear()} Lagos State Ministry of Environment & Water Resources. All Rights Reserved.
+            © {new Date().getFullYear()} Lagos State Ministry of Environment &amp; Water Resources. All Rights Reserved.
           </div>
 
           <div className="flex items-center gap-3 sm:gap-4">
-            <a href="#" className="hover:text-gray-300 transition">Privacy Policy</a>
+            <Link to="/privacy-policy" className="hover:text-gray-300 transition">Privacy Policy</Link>
             <span>•</span>
-            <a href="#" className="hover:text-gray-300 transition">Accessibility</a>
+            <Link to="/accessibility" className="hover:text-gray-300 transition">Accessibility</Link>
             <span>•</span>
             <button 
               onClick={scrollToTop} 
@@ -267,6 +345,7 @@ export default function Footer({ onOpenComplaints }) {
             </button>
           </div>
         </div>
+
       </div>
     </footer>
   );

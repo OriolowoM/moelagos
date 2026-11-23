@@ -87,7 +87,7 @@ export default function CommissionerPage({ posts = [] }) {
                   className="w-full h-full object-cover object-top"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = "/uploads/2025/07/Tokunbo-Wahab.jpg";
+                    e.target.src = "/tokunbowahab.jpg";
                   }}
                 />
                 

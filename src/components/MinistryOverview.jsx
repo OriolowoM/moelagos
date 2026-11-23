@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ShieldCheck, Droplets, Leaf, ArrowRight, Building, CheckCircle } from 'lucide-react';
 
 export default function MinistryOverview() {
@@ -61,13 +62,13 @@ export default function MinistryOverview() {
               </div>
             </div>
 
-            <a 
-              href="#departments" 
+            <Link 
+              to="/departments" 
               className="inline-flex items-center gap-2 text-sm font-bold text-lagos-green hover:text-lagos-darkGreen transition pt-2 group-hover:translate-x-1"
             >
-              <span>Explore Environmental Services</span>
+              <span>Explore Environmental Services &amp; Directorates</span>
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
 
           {/* 2. Office of Drainage Services & Water Resources (ODS&WR) */}
@@ -80,7 +81,7 @@ export default function MinistryOverview() {
                 Executive Directorate 02
               </div>
               <h3 className="font-heading text-xl sm:text-2xl font-bold text-gray-900 mb-3">
-                Office of Drainage Services & Water Resources
+                Office of Drainage Services &amp; Water Resources
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed mb-6">
                 Engineers, operates, and maintains primary and secondary stormwater drainage networks, executes capital dredging 
@@ -108,13 +109,13 @@ export default function MinistryOverview() {
               </div>
             </div>
 
-            <a 
-              href="#drainage" 
+            <Link 
+              to="/projects" 
               className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800 transition pt-2 group-hover:translate-x-1"
             >
-              <span>Explore Drainage & Water Infrastructure</span>
+              <span>Explore Drainage &amp; Water Infrastructure Projects</span>
               <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

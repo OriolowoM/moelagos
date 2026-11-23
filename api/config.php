@@ -22,8 +22,18 @@ define('DB_USER', getenv('DB_USER') ?: 'moelagos_user');
 define('DB_PASS', getenv('DB_PASS') ?: 'LagosState2026!Secure');
 define('DB_CHARSET', 'utf8mb4');
 
-// Complaints Email Routing Directives
+// Complaints & Notifications Routing Directives
 define('COMPLAINTS_DISPATCH_EMAILS', [
+    'lagosstateministryoftheenviron@gmail.com',
+    'env.wr@lagosstate.gov.ng'
+]);
+
+define('NEWSLETTER_DISPATCH_EMAILS', [
+    'lagosstateministryoftheenviron@gmail.com',
+    'env.wr@lagosstate.gov.ng'
+]);
+
+define('TREE_CHALLENGE_DISPATCH_EMAILS', [
     'lagosstateministryoftheenviron@gmail.com',
     'env.wr@lagosstate.gov.ng'
 ]);
