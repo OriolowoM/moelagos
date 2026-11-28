@@ -83,3 +83,6 @@ jobs:
             **/.git*
             **/.git*/**
             **/node_modules/**
+            **/uploads/**
+            api/data/newsletter_subscribers.json
+            api/data/tree_registrations.json
